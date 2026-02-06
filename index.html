@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>True Fitness Club</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <title>True Fitness Club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
 
@@ -13,117 +14,126 @@
   <nav>
     <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
-    <a href="#pricing">Plans</a>
+    <a href="#trainers">Trainers</a>
+    <a href="#plans">Plans</a>
     <a href="#bmi">BMI</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="social">
-    <a href="https://www.youtube.com/@truefitnessclubdummy" target="_blank">▶️</a>
-    <a href="https://www.instagram.com/true_fitness_club?igsh=MTh3MDc2ajB6Zjg4aA==" target="_blank">📸</a>
-  </div>
-  <button class="book-btn" onclick="openBooking()">Book Now</button>
+  <button class="btn-gold" onclick="openBooking()">Book Now</button>
 </header>
 
+<!-- HERO -->
 <section class="hero" style="background-image:url('gym-hero.jpg')">
   <div class="hero-overlay">
-    <h1>Build Your Body. Transform Your Life.</h1>
-    <p>Luxury Gym Experience with Elite Trainers</p>
-    <div>
-      <a class="btn" href="tel:9000000000">📞 Call Us</a>
-      <a class="btn green" href="https://wa.me/919000000000?text=Hello%20I%20want%20to%20join%20True%20Fitness%20Club" target="_blank">💬 WhatsApp</a>
-    </div>
+    <h1>Build Your Body, Transform Your Life</h1>
+    <p>Premium Gym Experience with Expert Trainers</p>
+    <button class="btn-gold" onclick="openBooking()">Join Now</button>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section">
-<h2>Our Services</h2>
-<div class="grid">
-  <div class="card"><img src="service1.jpg"><h3>Strength Training</h3></div>
-  <div class="card"><img src="service2.jpg"><h3>Cardio Fitness</h3></div>
-  <div class="card"><img src="service3.jpg"><h3>Personal Training</h3></div>
-  <div class="card"><img src="service4.jpg"><h3>Body Transformation</h3></div>
-</div>
+<section class="section" id="services">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card"><img src="service1.jpg"><h3>Weight Training</h3></div>
+    <div class="card"><img src="service2.jpg"><h3>Cardio</h3></div>
+    <div class="card"><img src="service3.jpg"><h3>Personal Training</h3></div>
+    <div class="card"><img src="service4.jpg"><h3>CrossFit</h3></div>
+  </div>
 </section>
 
 <!-- GALLERY SLIDER -->
-<section id="gallery" class="section dark">
-<h2>Gallery</h2>
-<div class="slider">
-  <img src="service1.jpg">
-  <img src="service2.jpg">
-  <img src="service3.jpg">
-  <img src="service4.jpg">
-</div>
+<section class="section" id="gallery">
+  <h2>Gallery</h2>
+  <div class="slider">
+    <div class="slides">
+      <img src="service1.jpg">
+      <img src="service2.jpg">
+      <img src="service3.jpg">
+      <img src="service4.jpg">
+    </div>
+  </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing" class="section">
-<h2>Membership Plans</h2>
-<div class="grid">
-  <div class="price-card"><h3>Basic</h3><p class="price">₹999 / month</p><button onclick="openBooking()">Join</button></div>
-  <div class="price-card featured"><h3>Premium</h3><p class="price">₹1999 / month</p><button onclick="openBooking()">Join</button></div>
-  <div class="price-card"><h3>Elite</h3><p class="price">₹2999 / month</p><button onclick="openBooking()">Join</button></div>
-</div>
-</section>
-
-<!-- BMI -->
-<section id="bmi" class="section dark">
-<h2>BMI Calculator</h2>
-<div class="bmi-box">
-  <input id="weight" placeholder="Weight (kg)">
-  <input id="height" placeholder="Height (cm)">
-  <button onclick="calcBMI()">Calculate</button>
-  <p id="bmiResult"></p>
-</div>
+<!-- TRAINERS -->
+<section class="section" id="trainers">
+  <h2>Our Trainers</h2>
+  <div class="grid">
+    <div class="card"><img src="trainer1.jpg"><h3>Coach Raj</h3></div>
+    <div class="card"><img src="trainer2.jpg"><h3>Coach Aman</h3></div>
+    <div class="card"><img src="trainer3.jpg"><h3>Coach Neha</h3></div>
+  </div>
 </section>
 
 <!-- BEFORE AFTER -->
 <section class="section">
-<h2>Transformations</h2>
-<div class="grid">
-  <div class="card">Before / After 1</div>
-  <div class="card">Before / After 2</div>
-  <div class="card">Before / After 3</div>
-</div>
+  <h2>Transformations</h2>
+  <div class="grid">
+    <div class="card"><img src="service1.jpg"><p>Before</p></div>
+    <div class="card"><img src="service2.jpg"><p>After</p></div>
+  </div>
 </section>
 
-<!-- CONTACT + MAPS -->
-<section id="contact" class="section dark">
-<h2>Our Branches</h2>
-<div class="grid">
-  <div class="map-box">
-    <h3>Mahim Branch</h3>
-    <iframe src="https://www.google.com/maps?q=Mahim,Mumbai&output=embed"></iframe>
+<!-- TESTIMONIALS -->
+<section class="section">
+  <h2>What Our Members Say</h2>
+  <div class="grid">
+    <div class="card"><p>Best gym ever!</p><h4>- Rohit</h4></div>
+    <div class="card"><p>Lost 12kg in 4 months!</p><h4>- Amit</h4></div>
+    <div class="card"><p>Premium equipment & trainers.</p><h4>- Sneha</h4></div>
   </div>
-  <div class="map-box">
-    <h3>Dadar Branch</h3>
-    <iframe src="https://www.google.com/maps?q=Dadar,Mumbai&output=embed"></iframe>
-  </div>
-  <div class="map-box">
-    <h3>Ghatkopar Branch</h3>
-    <iframe src="https://www.google.com/maps?q=Ghatkopar,Mumbai&output=embed"></iframe>
-  </div>
-</div>
 </section>
 
-<footer>
-<p>© 2026 True Fitness Club. All Rights Reserved.</p>
-</footer>
+<!-- PRICING -->
+<section class="section" id="plans">
+  <h2>Membership Plans</h2>
+  <table class="pricing">
+    <tr><th>Plan</th><th>Monthly</th><th>Quarterly</th><th>Yearly</th></tr>
+    <tr><td>Basic</td><td>₹1500</td><td>₹4000</td><td>₹14000</td></tr>
+    <tr><td>Premium</td><td>₹2500</td><td>₹7000</td><td>₹24000</td></tr>
+    <tr><td>Personal</td><td>₹4000</td><td>₹11000</td><td>₹38000</td></tr>
+  </table>
+</section>
+
+<!-- BMI -->
+<section class="section" id="bmi">
+  <h2>BMI Calculator</h2>
+  <div class="bmi-box">
+    <input id="height" placeholder="Height (cm)">
+    <input id="weight" placeholder="Weight (kg)">
+    <button class="btn-gold" onclick="calcBMI()">Calculate</button>
+    <p id="bmiResult"></p>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="section">
+  <h2>Follow Us on Instagram</h2>
+  <div style="text-align:center;">
+    <iframe src="https://www.instagram.com/true_fitness_club/embed" width="320" height="400"></iframe>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <p>Call: +91 9000000000</p>
+  <p>YouTube: <a href="https://youtube.com/@truefitnessclub" target="_blank">Our Channel</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/true_fitness_club" target="_blank">true_fitness_club</a></p>
+</section>
 
 <!-- BOOKING POPUP -->
-<div id="bookingModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeBooking()">×</span>
-    <h2>Book Your Slot</h2>
+<div class="popup" id="bookingPopup">
+  <div class="popup-content">
+    <h2>Book Your Visit</h2>
     <input placeholder="Name">
     <input placeholder="Phone">
-    <button onclick="sendWhatsApp()">Submit</button>
+    <button class="btn-gold" onclick="closeBooking()">Submit</button>
   </div>
 </div>
 
-<a class="whatsapp-float" href="https://wa.me/919000000000?text=Hello%20I%20want%20to%20join%20True%20Fitness%20Club" target="_blank">💬</a>
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/919000000000" target="_blank">WhatsApp</a>
 
-<script src="script.js"></script>
 </body>
 </html>
