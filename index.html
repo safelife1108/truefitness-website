@@ -5,9 +5,13 @@
   <title>True Fitness Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
+
+<!-- Scroll Progress -->
+<div id="progress-bar"></div>
 
 <header class="navbar">
   <div class="logo">TRUE FITNESS</div>
@@ -16,9 +20,14 @@
     <a href="#gallery">Gallery</a>
     <a href="#trainers">Trainers</a>
     <a href="#plans">Plans</a>
-    <a href="#bmi">BMI</a>
-    <a href="#contact">Contact</a>
+    <a href="#contact">Branches</a>
   </nav>
+  <div class="icons">
+    <a href="tel:9000000000"><i class="fa-solid fa-phone"></i></a>
+    <a href="https://wa.me/919000000000?text=Hello%20I%20want%20to%20join%20True%20Fitness%20Club" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://www.youtube.com/@truefitnessclubdummy" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.instagram.com/true_fitness_club" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  </div>
   <button class="btn-gold" onclick="openBooking()">Book Now</button>
 </header>
 
@@ -65,22 +74,15 @@
   </div>
 </section>
 
-<!-- BEFORE AFTER -->
+<!-- BEFORE AFTER SLIDER -->
 <section class="section">
   <h2>Transformations</h2>
-  <div class="grid">
-    <div class="card"><img src="service1.jpg"><p>Before</p></div>
-    <div class="card"><img src="service2.jpg"><p>After</p></div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section">
-  <h2>What Our Members Say</h2>
-  <div class="grid">
-    <div class="card"><p>Best gym ever!</p><h4>- Rohit</h4></div>
-    <div class="card"><p>Lost 12kg in 4 months!</p><h4>- Amit</h4></div>
-    <div class="card"><p>Premium equipment & trainers.</p><h4>- Sneha</h4></div>
+  <div class="ba-slider">
+    <img src="service1.jpg" alt="Before">
+    <div class="resize">
+      <img src="service2.jpg" alt="After">
+    </div>
+    <span class="handle"></span>
   </div>
 </section>
 
@@ -95,45 +97,34 @@
   </table>
 </section>
 
-<!-- BMI -->
-<section class="section" id="bmi">
-  <h2>BMI Calculator</h2>
-  <div class="bmi-box">
-    <input id="height" placeholder="Height (cm)">
-    <input id="weight" placeholder="Weight (kg)">
-    <button class="btn-gold" onclick="calcBMI()">Calculate</button>
-    <p id="bmiResult"></p>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section class="section">
-  <h2>Follow Us on Instagram</h2>
-  <div style="text-align:center;">
-    <iframe src="https://www.instagram.com/true_fitness_club/embed" width="320" height="400"></iframe>
-  </div>
-</section>
-
-<!-- CONTACT -->
+<!-- BRANCHES MAP -->
 <section class="section" id="contact">
-  <h2>Contact Us</h2>
-  <p>Call: +91 9000000000</p>
-  <p>YouTube: <a href="https://youtube.com/@truefitnessclub" target="_blank">Our Channel</a></p>
-  <p>Instagram: <a href="https://www.instagram.com/true_fitness_club" target="_blank">true_fitness_club</a></p>
+  <h2>Our Branches</h2>
+  <div class="grid">
+    <iframe src="https://www.google.com/maps?q=Mahim,Mumbai&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Dadar,Mumbai&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Ghatkopar,Mumbai&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Vashi,Navi%20Mumbai&output=embed"></iframe>
+  </div>
 </section>
 
 <!-- BOOKING POPUP -->
 <div class="popup" id="bookingPopup">
   <div class="popup-content">
     <h2>Book Your Visit</h2>
-    <input placeholder="Name">
-    <input placeholder="Phone">
-    <button class="btn-gold" onclick="closeBooking()">Submit</button>
+    <input id="bookName" placeholder="Name">
+    <input id="bookPhone" placeholder="Phone">
+    <button class="btn-gold" onclick="sendWhatsApp()">Send on WhatsApp</button>
+    <br><br>
+    <button onclick="closeBooking()">Close</button>
   </div>
 </div>
 
-<!-- WHATSAPP BUTTON -->
-<a class="whatsapp" href="https://wa.me/919000000000" target="_blank">WhatsApp</a>
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/919000000000?text=Hello%20I%20want%20to%20join%20True%20Fitness%20Club" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
+<script src="script.js"></script>
 </body>
 </html>
