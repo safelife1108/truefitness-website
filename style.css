@@ -1,367 +1,220 @@
-/* =========================
-   PREMIUM THEME VARIABLES
-========================= */
-:root {
-  --bg-dark: #0a0f1f;
-  --bg-dark-2: #0e1630;
-  --gold: #d4af37;
-  --gold-light: #f5d76e;
-  --text-light: #f5f7ff;
-  --text-muted: #b8c0ff;
-  --card-bg: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.15);
-  --shadow-soft: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* =========================
-   RESET
-========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: radial-gradient(1200px 600px at top, #121c3d 0%, var(--bg-dark) 60%);
-  color: var(--text-light);
-  line-height: 1.6;
+  background: #0b0f19;
+  color: #fff;
+  scroll-behavior: smooth;
 }
 
-/* =========================
-   GLOBAL
-========================= */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-section {
-  padding: 80px 20px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* =========================
-   HEADER / NAVBAR
-========================= */
-header {
-  position: sticky;
+/* Scroll Progress */
+#progress-bar {
+  position: fixed;
   top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(12px);
-  background: rgba(10, 15, 31, 0.75);
-  border-bottom: 1px solid var(--glass-border);
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, gold, #1e90ff);
+  z-index: 9999;
 }
 
+/* Glass Effect */
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+}
+
+/* Navbar */
 .navbar {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px 20px;
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 15px 30px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  font-size: 22px;
   font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.5px;
-  color: var(--gold-light);
+}
+.logo span {
+  color: gold;
 }
 
-.logo img {
-  height: 42px;
-  width: auto;
+.navbar nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
 }
 
-.nav-actions {
-  display: flex;
-  gap: 12px;
-}
-
-.btn {
+.cta {
+  background: linear-gradient(45deg, gold, #1e90ff);
   padding: 10px 18px;
-  border-radius: 999px;
+  border-radius: 25px;
+  color: #000;
+  text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  color: #111;
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.55);
-}
-
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--gold);
-  color: var(--gold-light);
-}
-
-.btn-outline:hover {
-  background: rgba(212, 175, 55, 0.1);
-}
-
-/* =========================
-   HERO SECTION
-========================= */
+/* Hero */
 .hero {
-  min-height: 90vh;
+  height: 100vh;
+  background: linear-gradient(135deg, #05080f, #0b1a2f);
   display: flex;
   align-items: center;
-  background: linear-gradient(
-      rgba(10, 15, 31, 0.75),
-      rgba(10, 15, 31, 0.85)
-    ),
-    url("lab-banner.jpg") center/cover no-repeat;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255,215,0,0.1), transparent 60%);
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 700px;
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  line-height: 1.2;
-  margin-bottom: 20px;
-  font-weight: 800;
+  font-size: 3rem;
 }
-
 .hero h1 span {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: gold;
 }
 
 .hero p {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  margin-bottom: 30px;
+  margin: 15px 0 25px;
+  color: #ccc;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+.btn {
+  padding: 12px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 5px;
+  display: inline-block;
 }
 
-/* =========================
-   SECTION TITLES
-========================= */
+.btn.gold {
+  background: linear-gradient(45deg, gold, #1e90ff);
+  color: #000;
+  font-weight: 600;
+}
+
+.btn.outline {
+  border: 1px solid gold;
+  color: gold;
+}
+
+/* Sections */
+.section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section.dark {
+  background: #070b14;
+}
+
 .section-title {
-  text-align: center;
-  margin-bottom: 60px;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: gold;
 }
 
-.section-title h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.section-title h2 span {
-  color: var(--gold-light);
-}
-
-.section-title p {
-  color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* =========================
-   GLASS CARDS
-========================= */
-.glass-grid {
+/* Cards */
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
-.glass-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.35s ease;
-  position: relative;
-  overflow: hidden;
+.card {
+  padding: 25px;
+  transition: 0.3s;
 }
-
-.glass-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.glass-card:hover::before {
-  opacity: 1;
-}
-
-.glass-card:hover {
+.card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
-.glass-card h3 {
-  margin-bottom: 10px;
-  color: var(--gold-light);
-}
-
-.glass-card p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-
-/* =========================
-   IMAGE CARDS (SERVICES / GALLERY)
-========================= */
-.image-card {
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: var(--shadow-soft);
-}
-
-.image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.image-card:hover img {
-  transform: scale(1.08);
-}
-
-.image-card .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(10,15,31,0.9), rgba(10,15,31,0.1));
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-}
-
-.image-card h4 {
-  color: var(--gold-light);
-}
-
-/* =========================
-   TRAINER / TEAM
-========================= */
-.trainer-card {
-  text-align: center;
-}
-
-.trainer-card img {
-  border-radius: 20px;
-  margin-bottom: 15px;
-}
-
-.trainer-card h4 {
-  color: var(--gold-light);
-}
-
-.trainer-card span {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-/* =========================
-   CONTACT / FORM
-========================= */
-.contact-grid {
+/* Gallery */
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
 }
 
-form input,
-form textarea {
-  width: 100%;
-  padding: 14px 16px;
+.gallery-item {
+  height: 160px;
+  background: linear-gradient(135deg, #111, #222);
   border-radius: 12px;
-  border: 1px solid var(--glass-border);
-  background: rgba(255,255,255,0.05);
-  color: var(--text-light);
-  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
 }
 
-form input:focus,
-form textarea:focus {
-  outline: none;
-  border-color: var(--gold);
+/* Contact */
+.contact-box {
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-footer {
-  background: rgba(10, 15, 31, 0.8);
-  border-top: 1px solid var(--glass-border);
-  padding: 30px 20px;
-  text-align: center;
-  color: var(--text-muted);
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
 }
 
-/* =========================
-   FLOATING WHATSAPP
-========================= */
+/* WhatsApp Float */
 .whatsapp-float {
   position: fixed;
   right: 20px;
   bottom: 20px;
   background: #25d366;
   color: #fff;
-  width: 56px;
-  height: 56px;
+  font-size: 24px;
+  padding: 14px 16px;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  z-index: 999;
+  text-decoration: none;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  .hero {
-    text-align: center;
-  }
-  .hero-buttons {
-    justify-content: center;
-  }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #05080f;
+  color: #aaa;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
