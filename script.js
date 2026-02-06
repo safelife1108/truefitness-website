@@ -1,13 +1,13 @@
-function openBooking(){document.getElementById("bookingModal").style.display="flex";}
-function closeBooking(){document.getElementById("bookingModal").style.display="none";}
-
-function sendWhatsApp(){
-  window.open("https://wa.me/919000000000?text=Hello%20I%20want%20to%20join%20True%20Fitness%20Club","_blank");
+function openBooking() {
+  document.getElementById("bookingPopup").style.display = "flex";
+}
+function closeBooking() {
+  document.getElementById("bookingPopup").style.display = "none";
 }
 
-function calcBMI(){
-  let w=document.getElementById("weight").value;
-  let h=document.getElementById("height").value/100;
-  let bmi=(w/(h*h)).toFixed(2);
-  document.getElementById("bmiResult").innerText="Your BMI: "+bmi;
+function calcBMI() {
+  let h = document.getElementById("height").value / 100;
+  let w = document.getElementById("weight").value;
+  let bmi = (w / (h*h)).toFixed(2);
+  document.getElementById("bmiResult").innerText = "Your BMI: " + bmi;
 }
