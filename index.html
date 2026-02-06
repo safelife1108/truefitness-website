@@ -1,90 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>True Fitness Club</title>
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>True Fitness Club</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
 <header class="navbar">
-  <div class="logo">TRUE<span>FITNESS</span></div>
+  <div class="logo">TRUE FITNESS</div>
   <nav>
     <a href="#services">Services</a>
-    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#pricing">Plans</a>
     <a href="#trainers">Trainers</a>
+    <a href="#testimonials">Reviews</a>
     <a href="#contact">Contact</a>
   </nav>
+  <button class="book-btn" onclick="openBooking()">Book Now</button>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Build Your Body.<br><span>Transform Your Life.</span></h1>
-    <p>Premium gym experience with modern equipment & expert trainers.</p>
-    <div class="hero-buttons">
-      <a href="tel:9326602540" class="btn gold">📞 Call Now</a>
-      <a href="https://wa.me/919326602540" class="btn green">💬 WhatsApp</a>
-    </div>
-  </div>
-  <div class="hero-image">
-    <img src="gym-hero.jpg" alt="Gym">
+<section class="hero" style="background-image:url('gym-hero.jpg')">
+  <div class="hero-overlay">
+    <h1>Build Your Body.<br>Transform Your Life.</h1>
+    <p>Luxury Gym Experience with Elite Trainers</p>
+    <button class="btn" onclick="openBooking()">Join Now</button>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="section">
-  <h2>Our Programs</h2>
-  <div class="cards">
-    <div class="card"><img src="service1.jpg"><span>Personal Training</span></div>
-    <div class="card"><img src="service2.jpg"><span>Weight Training</span></div>
-    <div class="card"><img src="service3.jpg"><span>Cardio & Fat Loss</span></div>
-    <div class="card"><img src="service4.jpg"><span>Strength & Conditioning</span></div>
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card"><img src="service1.jpg"><h3>Strength Training</h3></div>
+    <div class="card"><img src="service2.jpg"><h3>Cardio Fitness</h3></div>
+    <div class="card"><img src="service3.jpg"><h3>Personal Training</h3></div>
+    <div class="card"><img src="service4.jpg"><h3>Body Transformation</h3></div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section about">
-  <div class="about-text">
-    <h2>About True Fitness Club</h2>
-    <p>
-      True Fitness Club is a premium gym designed to help you achieve your fitness goals with
-      world-class equipment, certified trainers, and a motivating environment.
-    </p>
+<!-- GALLERY -->
+<section id="gallery" class="section dark">
+  <h2>Gym Gallery</h2>
+  <div class="slider">
+    <img src="service1.jpg">
+    <img src="service2.jpg">
+    <img src="service3.jpg">
+    <img src="service4.jpg">
   </div>
-  <div class="about-video">
-    <iframe width="100%" height="250" src="https://www.youtube.com/embed/dJlFmxiL11s" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section">
+  <h2>Membership Plans</h2>
+  <div class="grid">
+    <div class="price-card">
+      <h3>Basic</h3>
+      <p class="price">₹999 / month</p>
+      <p>Gym Access</p>
+      <p>Free Consultation</p>
+      <button onclick="openBooking()">Choose</button>
+    </div>
+    <div class="price-card featured">
+      <h3>Premium</h3>
+      <p class="price">₹1999 / month</p>
+      <p>All Access</p>
+      <p>Personal Trainer</p>
+      <p>Diet Plan</p>
+      <button onclick="openBooking()">Choose</button>
+    </div>
+    <div class="price-card">
+      <h3>Elite</h3>
+      <p class="price">₹2999 / month</p>
+      <p>VIP Access</p>
+      <p>1-on-1 Coaching</p>
+      <p>Priority Support</p>
+      <button onclick="openBooking()">Choose</button>
+    </div>
   </div>
 </section>
 
 <!-- TRAINERS -->
-<section id="trainers" class="section">
+<section id="trainers" class="section dark">
   <h2>Our Trainers</h2>
-  <div class="trainers">
-    <div class="trainer"><img src="trainer1.jpg"><h3>Coach Raj</h3></div>
-    <div class="trainer"><img src="trainer2.jpg"><h3>Coach Amit</h3></div>
-    <div class="trainer"><img src="trainer3.jpg"><h3>Coach Neha</h3></div>
+  <div class="grid">
+    <div class="card"><img src="trainer1.jpg"><h3>Coach 1</h3></div>
+    <div class="card"><img src="trainer2.jpg"><h3>Coach 2</h3></div>
+    <div class="card"><img src="trainer3.jpg"><h3>Coach 3</h3></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section">
+  <h2>What Clients Say</h2>
+  <div class="grid">
+    <div class="review">"Best gym in the area! शानदार results!" ⭐⭐⭐⭐⭐</div>
+    <div class="review">"Trainers are very supportive and professional." ⭐⭐⭐⭐⭐</div>
+    <div class="review">"Premium equipment and great atmosphere." ⭐⭐⭐⭐⭐</div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section contact">
-  <div class="contact-info">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: 93266 02540</p>
-    <p>📍 Location: Mumbai</p>
-  </div>
-  <div class="map">
-    <iframe 
-      src="https://www.google.com/maps?q=Dharavi,Mumbai&output=embed" 
-      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
+<section id="contact" class="section dark">
+  <h2>Contact Us</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/919326602540" class="floating-whatsapp">💬</a>
+<footer>
+  <p>© 2026 True Fitness Club. All Rights Reserved.</p>
+</footer>
+
+<!-- BOOKING POPUP -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h2>Book Your Membership</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="phone" placeholder="Your Phone">
+    <input type="email" placeholder="Your Email">
+    <button>Submit</button>
+  </div>
+</div>
+
+<a class="whatsapp" href="https://wa.me/919999999999" target="_blank">WhatsApp</a>
 
 <script src="script.js"></script>
 </body>
