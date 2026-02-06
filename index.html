@@ -2,54 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>True Fitness Club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
+<header class="header glass">
   <div class="logo">💪 True Fitness Club</div>
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#trainers">Trainers</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero" id="home">
-  <div class="hero-content">
+  <div class="hero-content animate">
     <h1>Build Your Body, Build Your Confidence</h1>
-    <p>Join True Fitness Club – The best gym in your area</p>
+    <p>Join True Fitness Club – Premium Gym Experience</p>
     <a href="#contact" class="btn">Join Now</a>
   </div>
 </section>
 
-<section class="about" id="about">
+<section class="about animate" id="about">
   <h2>About Us</h2>
   <p>
     True Fitness Club is a modern gym with professional trainers, 
-    latest equipment, and a friendly environment to help you achieve your fitness goals.
+    premium equipment and a friendly environment to help you reach your goals.
   </p>
 </section>
 
 <section class="services" id="services">
-  <h2>Our Services</h2>
+  <h2 class="animate">Our Services</h2>
   <div class="cards">
-    <div class="card">🏋️ Weight Training</div>
-    <div class="card">🤸 Cardio Training</div>
-    <div class="card">🥗 Diet & Nutrition</div>
-    <div class="card">🧘 Personal Training</div>
+    <div class="card animate">🏋️ Weight Training</div>
+    <div class="card animate">🤸 Cardio Training</div>
+    <div class="card animate">🥗 Diet & Nutrition</div>
+    <div class="card animate">🧘 Personal Training</div>
+  </div>
+</section>
+
+<section class="trainers" id="trainers">
+  <h2 class="animate">Our Trainers</h2>
+  <div class="trainer-grid">
+    <div class="trainer card animate">
+      <img src="https://images.unsplash.com/photo-1594737625785-cfe2e4e6c1b1?q=80&w=600" alt="">
+      <h3>Rahul Sharma</h3>
+      <p>Strength Coach</p>
+    </div>
+    <div class="trainer card animate">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=600" alt="">
+      <h3>Amit Verma</h3>
+      <p>Fitness Trainer</p>
+    </div>
+    <div class="trainer card animate">
+      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=600" alt="">
+      <h3>Neha Patel</h3>
+      <p>Yoga & Cardio</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <h2 class="animate">Gallery</h2>
+  <div class="gallery-grid">
+    <img class="animate" src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?q=80&w=800">
+    <img class="animate" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800">
+    <img class="animate" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=800">
+    <img class="animate" src="https://images.unsplash.com/photo-1571019613914-85f342c55f14?q=80&w=800">
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>📍 Your Gym Address Here</p>
-  <p>📞 Phone: 9XXXXXXXXX</p>
-  <p>📧 Email: yourgym@email.com</p>
-  <a class="whatsapp" href="https://wa.me/919999999999" target="_blank">💬 Chat on WhatsApp</a>
+  <h2 class="animate">Contact Us</h2>
+  <form class="contact-form glass animate">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <a class="whatsapp-float" href="https://wa.me/919999999999" target="_blank">💬</a>
 </section>
 
 <footer>
@@ -59,4 +95,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
