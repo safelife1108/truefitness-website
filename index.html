@@ -2,118 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>True Fitness Club</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Scroll Progress -->
-  <div id="progress-bar"></div>
+<header class="navbar">
+  <div class="logo">TRUE<span>FITNESS</span></div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#trainers">Trainers</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- Navbar -->
-  <header class="navbar glass">
-    <div class="logo">TRUE<span>FITNESS</span></div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#trainers">Trainers</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="cta" href="#contact">Join Now</a>
-  </header>
-
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Build Your Body.<br><span>Transform Your Life.</span></h1>
-      <p>Premium gym experience with modern equipment & expert trainers</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn gold">Join Now</a>
-        <a href="#gallery" class="btn outline">View Gallery</a>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Build Your Body.<br><span>Transform Your Life.</span></h1>
+    <p>Premium gym experience with modern equipment & expert trainers.</p>
+    <div class="hero-buttons">
+      <a href="tel:9326602540" class="btn gold">📞 Call Now</a>
+      <a href="https://wa.me/919326602540" class="btn green">💬 WhatsApp</a>
     </div>
-  </section>
+  </div>
+  <div class="hero-image">
+    <img src="gym-hero.jpg" alt="Gym">
+  </div>
+</section>
 
-  <!-- Services -->
-  <section id="services" class="section">
-    <h2 class="section-title">Our Services</h2>
-    <div class="cards">
-      <div class="card glass reveal">
-        <h3>💪 Strength Training</h3>
-        <p>Modern equipment for muscle growth and strength.</p>
-      </div>
-      <div class="card glass reveal">
-        <h3>🔥 Fat Loss Programs</h3>
-        <p>Personalized programs to burn fat effectively.</p>
-      </div>
-      <div class="card glass reveal">
-        <h3>🧘 Cardio & Fitness</h3>
-        <p>Improve stamina, endurance and heart health.</p>
-      </div>
-      <div class="card glass reveal">
-        <h3>🥗 Diet Guidance</h3>
-        <p>Professional nutrition guidance for best results.</p>
-      </div>
-    </div>
-  </section>
+<!-- SERVICES -->
+<section id="services" class="section">
+  <h2>Our Programs</h2>
+  <div class="cards">
+    <div class="card"><img src="service1.jpg"><span>Personal Training</span></div>
+    <div class="card"><img src="service2.jpg"><span>Weight Training</span></div>
+    <div class="card"><img src="service3.jpg"><span>Cardio & Fat Loss</span></div>
+    <div class="card"><img src="service4.jpg"><span>Strength & Conditioning</span></div>
+  </div>
+</section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="section dark">
-    <h2 class="section-title">Gallery</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item reveal">Add Image</div>
-      <div class="gallery-item reveal">Add Image</div>
-      <div class="gallery-item reveal">Add Image</div>
-      <div class="gallery-item reveal">Add Image</div>
-      <div class="gallery-item reveal">Add Image</div>
-      <div class="gallery-item reveal">Add Image</div>
-    </div>
-  </section>
+<!-- ABOUT -->
+<section id="about" class="section about">
+  <div class="about-text">
+    <h2>About True Fitness Club</h2>
+    <p>
+      True Fitness Club is a premium gym designed to help you achieve your fitness goals with
+      world-class equipment, certified trainers, and a motivating environment.
+    </p>
+  </div>
+  <div class="about-video">
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/dJlFmxiL11s" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
 
-  <!-- Trainers -->
-  <section id="trainers" class="section">
-    <h2 class="section-title">Our Trainers</h2>
-    <div class="cards">
-      <div class="card glass reveal">
-        <h3>🏋️ Trainer 1</h3>
-        <p>Certified strength & fitness coach</p>
-      </div>
-      <div class="card glass reveal">
-        <h3>🤸 Trainer 2</h3>
-        <p>Weight loss & cardio specialist</p>
-      </div>
-      <div class="card glass reveal">
-        <h3>🥊 Trainer 3</h3>
-        <p>Functional & boxing fitness expert</p>
-      </div>
-    </div>
-  </section>
+<!-- TRAINERS -->
+<section id="trainers" class="section">
+  <h2>Our Trainers</h2>
+  <div class="trainers">
+    <div class="trainer"><img src="trainer1.jpg"><h3>Coach Raj</h3></div>
+    <div class="trainer"><img src="trainer2.jpg"><h3>Coach Amit</h3></div>
+    <div class="trainer"><img src="trainer3.jpg"><h3>Coach Neha</h3></div>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="section dark">
-    <h2 class="section-title">Contact Us</h2>
-    <div class="contact-box glass reveal">
-      <form>
-        <input type="text" placeholder="Your Name" required/>
-        <input type="email" placeholder="Your Email" required/>
-        <input type="tel" placeholder="Your Phone" required/>
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit" class="btn gold">Send Message</button>
-      </form>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+  <div class="contact-info">
+    <h2>Contact Us</h2>
+    <p>📞 Phone: 93266 02540</p>
+    <p>📍 Location: Mumbai</p>
+  </div>
+  <div class="map">
+    <iframe 
+      src="https://www.google.com/maps?q=Dharavi,Mumbai&output=embed" 
+      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</section>
 
-  <!-- Floating WhatsApp -->
-  <a class="whatsapp-float" href="https://wa.me/919326602540" target="_blank">💬</a>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919326602540" class="floating-whatsapp">💬</a>
 
-  <footer>
-    <p>© 2026 True Fitness Club. All Rights Reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
