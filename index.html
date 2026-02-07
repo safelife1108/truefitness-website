@@ -25,7 +25,7 @@
     <a href="#programs">Programs</a>
     <a href="#team">Team</a>
     <a href="#transform">Results</a>
-    <a href="#contact" class="cta">Start Now</a>
+    <a href="#contact" class="cta">Contact</a>
   </nav>
 </header>
 
@@ -35,7 +35,7 @@
   <div class="hero-content">
     <h1>Train Different.<br><span>Transform for Life.</span></h1>
     <p>A premium fitness experience built for real results.</p>
-    <button onclick="bookWhatsApp()" class="primary-btn">Start Your Journey</button>
+    <button onclick="bookWhatsApp()" class="primary-btn">Book on WhatsApp</button>
   </div>
 </section>
 
@@ -79,6 +79,17 @@
   </div>
 </section>
 
+<!-- BMI CALCULATOR -->
+<section id="bmi" class="bmi-section">
+  <h2>Check Your BMI</h2>
+  <div class="bmi-box">
+    <input id="height" type="number" placeholder="Height (cm)" />
+    <input id="weight" type="number" placeholder="Weight (kg)" />
+    <button class="primary-btn" onclick="calcBMI()">Calculate BMI</button>
+    <p id="bmiResult"></p>
+  </div>
+</section>
+
 <!-- TRANSFORMATION -->
 <section id="transform" class="transform">
   <h2>Real People. Real Results.</h2>
@@ -113,11 +124,12 @@
 
 <!-- CONTACT / BRANCHES -->
 <section id="contact" class="contact-premium">
+
   <h2>Contact & Branch Information</h2>
 
   <div class="contact-container">
 
-    <!-- Info -->
+    <!-- Official Info -->
     <div class="contact-details">
       <h3>Get In Touch</h3>
 
@@ -141,22 +153,26 @@
 
       <div class="map-box">
         <h4>Mahim Branch</h4>
-        <iframe src="https://maps.google.com/maps?q=Devdarshan%20Building%20Mogul%20Lane%20Mahim%20Mumbai&output=embed"></iframe>
+        <iframe
+          src="https://maps.google.com/maps?q=Devdarshan%20Building%20Mogul%20Lane%20Mahim%20Mumbai&output=embed"></iframe>
       </div>
 
       <div class="map-box">
         <h4>Dadar Branch</h4>
-        <iframe src="https://maps.google.com/maps?q=Himmat%20Mansion%20Lady%20Jamshedji%20Rd%20Dadar%20Mumbai&output=embed"></iframe>
+        <iframe
+          src="https://maps.google.com/maps?q=Himmat%20Mansion%20Lady%20Jamshedji%20Rd%20Dadar%20Mumbai&output=embed"></iframe>
       </div>
 
       <div class="map-box">
         <h4>Ghatkopar Branch</h4>
-        <iframe src="https://maps.google.com/maps?q=Rajgor%20Empire%20Building%20Near%20Metro%20Station%20Ghatkopar%20Mumbai&output=embed"></iframe>
+        <iframe
+          src="https://maps.google.com/maps?q=Rajgor%20Empire%20Building%20Near%20Metro%20Station%20Ghatkopar%20Mumbai&output=embed"></iframe>
       </div>
 
       <div class="map-box">
         <h4>Vashi Branch</h4>
-        <iframe src="https://maps.google.com/maps?q=Krishna%20Residency%20Sector%2029%20Vashi%20Navi%20Mumbai&output=embed"></iframe>
+        <iframe
+          src="https://maps.google.com/maps?q=Krishna%20Residency%20Sector%2029%20Vashi%20Navi%20Mumbai&output=embed"></iframe>
       </div>
 
     </div>
@@ -166,7 +182,6 @@
 <!-- FINAL CTA -->
 <section class="final-cta">
   <h2>Your transformation starts today.</h2>
-  <p>Join the elite training experience at True Fitness Club.</p>
   <div class="cta-actions">
     <button onclick="bookWhatsApp()" class="primary-btn">Book on WhatsApp</button>
     <a href="tel:+919892857707" class="secondary-btn"><i class="fa-solid fa-phone"></i> Call Us</a>
