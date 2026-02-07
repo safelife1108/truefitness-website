@@ -8,8 +8,8 @@ window.addEventListener("scroll", () => {
 
 // WhatsApp booking
 function bookWhatsApp() {
-  const msg = encodeURIComponent("Hi, I want to start my fitness journey at True Fitness Club.");
-  window.open("https://wa.me/919999999999?text=" + msg, "_blank");
+  const msg = encodeURIComponent("Hi! I want to join True Fitness Club. Please help me with membership details.");
+  window.open("https://wa.me/919892857707?text=" + msg, "_blank");
 }
 
 // Before/After slider
