@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>True Fitness Club</title>
+  <title>True Fitness Club — Elite Performance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- 3D Tilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -30,52 +33,56 @@
 <!-- HERO -->
 <section class="hero" style="background-image:url('gym-hero.jpg')">
   <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
   <div class="hero-content">
-    <h1>Train Like a Beast.<br><span>Look Like a Champion.</span></h1>
-    <p>Premium training. Serious results. True Fitness Club.</p>
-    <button onclick="bookWhatsApp()" class="primary-btn">Book on WhatsApp</button>
+    <h1>Elite Performance.<br><span>Serious Results.</span></h1>
+    <p>Luxury training environment for those who want real transformation.</p>
+    <div class="hero-actions">
+      <button onclick="bookWhatsApp()" class="primary-btn">Book on WhatsApp</button>
+      <a href="#programs" class="secondary-btn">Explore Programs</a>
+    </div>
   </div>
 </section>
 
 <!-- PROGRAMS -->
 <section id="programs" class="programs">
-  <h2>Our Programs</h2>
+  <h2 class="section-title">Our Programs</h2>
   <div class="program-grid">
-    <div class="program-card"><img src="service1.jpg"><h3>Strength Training</h3></div>
-    <div class="program-card"><img src="service2.jpg"><h3>Fat Loss</h3></div>
-    <div class="program-card"><img src="service3.jpg"><h3>Personal Training</h3></div>
-    <div class="program-card"><img src="service4.jpg"><h3>Conditioning</h3></div>
+    <div class="program-card tilt"><img src="service1.jpg"><h3>Strength Training</h3></div>
+    <div class="program-card tilt"><img src="service2.jpg"><h3>Fat Loss</h3></div>
+    <div class="program-card tilt"><img src="service3.jpg"><h3>Personal Training</h3></div>
+    <div class="program-card tilt"><img src="service4.jpg"><h3>Conditioning</h3></div>
   </div>
 </section>
 
 <!-- FESTIVAL PACKAGES -->
 <section class="festival-packages" id="festivals">
-  <h2>Festive Special Packages</h2>
-  <p class="section-sub">Limited-time transformation offers</p>
+  <h2 class="section-title">Festive Special Packages</h2>
+  <p class="section-sub">Limited-time elite transformation offers</p>
 
   <div class="festival-grid">
-    <div class="festival-card">
+    <div class="festival-card tilt">
       <h3>🪔 Diwali Fit India Pack</h3>
       <p>12 Weeks Fat Loss Program</p>
       <span class="price">₹9,999</span>
       <button onclick="bookWhatsApp()" class="primary-btn small">Enquire</button>
     </div>
 
-    <div class="festival-card highlight">
+    <div class="festival-card highlight tilt">
       <h3>🎉 New Year Transformation</h3>
       <p>Complete Body Recomposition</p>
       <span class="price">₹14,999</span>
       <button onclick="bookWhatsApp()" class="primary-btn small">Join Now</button>
     </div>
 
-    <div class="festival-card">
+    <div class="festival-card tilt">
       <h3>🌈 Holi Shred Challenge</h3>
       <p>8 Weeks Shred Program</p>
       <span class="price">₹6,999</span>
       <button onclick="bookWhatsApp()" class="primary-btn small">Enquire</button>
     </div>
 
-    <div class="festival-card">
+    <div class="festival-card tilt">
       <h3>🕉️ Navratri Bootcamp</h3>
       <p>Special Training + Diet</p>
       <span class="price">₹7,499</span>
@@ -86,8 +93,8 @@
 
 <!-- BMI -->
 <section id="bmi" class="bmi-section">
-  <h2>Check Your BMI</h2>
-  <div class="bmi-box">
+  <h2 class="section-title">Check Your BMI</h2>
+  <div class="bmi-box glass">
     <input id="height" type="number" placeholder="Height (cm)">
     <input id="weight" type="number" placeholder="Weight (kg)">
     <button class="primary-btn" onclick="calcBMI()">Calculate</button>
@@ -97,10 +104,10 @@
 
 <!-- TRANSFORMATIONS -->
 <section class="transformations" id="transformations">
-  <h2>Real Transformations</h2>
+  <h2 class="section-title">Real Transformations</h2>
 
   <div class="ba-grid">
-    <div class="ba-card">
+    <div class="ba-card glass tilt">
       <h3>Men</h3>
       <div class="ba-images">
         <div><span>Before</span><img src="before-man.jpg"></div>
@@ -108,7 +115,7 @@
       </div>
     </div>
 
-    <div class="ba-card">
+    <div class="ba-card glass tilt">
       <h3>Women</h3>
       <div class="ba-images">
         <div><span>Before</span><img src="before-woman.jpg"></div>
@@ -120,31 +127,31 @@
 
 <!-- TESTIMONIALS -->
 <section class="testimonials">
-  <h2>What Our Members Say</h2>
+  <h2 class="section-title">What Our Members Say</h2>
   <div class="testimonial-grid">
-    <div class="testimonial-card">
+    <div class="testimonial-card glass tilt">
       <img src="client1.jpg">
       <h4>Rahul Sharma</h4>
-      <p>Lost 12kg in 4 months. Best gym experience ever!</p>
+      <p>Lost 12kg in 4 months. Elite gym experience.</p>
     </div>
-    <div class="testimonial-card">
+    <div class="testimonial-card glass tilt">
       <img src="client2.jpg">
       <h4>Neha Patel</h4>
-      <p>Premium trainers and great environment.</p>
+      <p>Premium trainers and luxury environment.</p>
     </div>
-    <div class="testimonial-card">
+    <div class="testimonial-card glass tilt">
       <img src="client3.jpg">
       <h4>Amit Verma</h4>
-      <p>Serious results, serious training. Highly recommended.</p>
+      <p>Serious training, serious results.</p>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact-premium">
-  <h2>Contact & Branches</h2>
+  <h2 class="section-title">Contact & Branches</h2>
 
-  <div class="contact-details">
+  <div class="contact-details glass">
     <p><i class="fas fa-envelope"></i> info@truefitnessclub.in</p>
     <p><i class="fas fa-phone"></i> +91 98928 57707</p>
 
@@ -164,7 +171,7 @@
 </section>
 
 <footer class="footer">
-  © 2026 True Fitness Club
+  © 2026 True Fitness Club — Elite Performance
 </footer>
 
 <script src="script.js"></script>
