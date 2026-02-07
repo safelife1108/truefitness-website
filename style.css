@@ -1,35 +1,63 @@
-// Scroll progress
-window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const progress = (scrollTop / height) * 100;
-  document.getElementById("progress").style.width = progress + "%";
-});
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+img{max-width:100%;height:auto;display:block}
+body{background:#0b0e13;color:#eaeaea}
 
-// WhatsApp booking
-function bookWhatsApp() {
-  const msg = encodeURIComponent("Hi! I want to join True Fitness Club. Please send membership details.");
-  window.open("https://wa.me/919892857707?text=" + msg, "_blank");
-}
+/* Progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#cfa24a,#f5d37a);z-index:9999}
 
-// Before/After slider
-const slider = document.getElementById("baSlider");
-const afterImg = document.getElementById("afterImg");
+/* Nav */
+.nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);z-index:1000}
+.brand{font-weight:900;letter-spacing:2px}
+.brand span{color:#cfa24a}
+.nav a{color:#ccc;margin-left:20px;text-decoration:none}
+.nav .cta{background:#cfa24a;color:#000;padding:8px 16px;border-radius:20px}
 
-if (slider) {
-  slider.addEventListener("input", function () {
-    afterImg.style.clipPath = `inset(0 ${100 - this.value}% 0 0)`;
-  });
-}
+/* Hero */
+.hero{height:70vh;min-height:420px;background-size:cover;background-position:center;display:flex;align-items:center;padding:0 10%;position:relative}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.3))}
+.hero-content{position:relative;max-width:600px}
+.hero h1{font-size:clamp(2.2rem,4vw,3.5rem);font-weight:900}
+.hero h1 span{color:#cfa24a}
+.hero p{margin:20px 0}
 
-// BMI Calculator
-function calcBMI() {
-  let height = document.getElementById("height").value / 100;
-  let weight = document.getElementById("weight").value;
-  if (!height || !weight) {
-    document.getElementById("bmiResult").innerText = "Please enter both values.";
-    return;
-  }
-  let bmi = (weight / (height * height)).toFixed(2);
-  document.getElementById("bmiResult").innerText = "Your BMI is " + bmi;
-}
+/* Buttons */
+.primary-btn{background:linear-gradient(135deg,#cfa24a,#f5d37a);border:none;padding:12px 26px;border-radius:30px;font-weight:700;cursor:pointer}
+.primary-btn.small{padding:8px 18px;font-size:.9rem}
+
+/* Programs */
+.programs{padding:80px 10%;text-align:center}
+.program-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:30px}
+.program-card{background:#11161f;border-radius:16px;overflow:hidden}
+
+/* Festival */
+.festival-packages{padding:80px 10%;text-align:center;background:#0f131a}
+.festival-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:30px}
+.festival-card{background:rgba(255,255,255,.05);padding:20px;border-radius:16px;border:1px solid rgba(207,162,74,.3)}
+.festival-card .price{font-size:1.5rem;color:#cfa24a}
+.festival-card.highlight{border:2px solid #cfa24a}
+
+/* BMI */
+.bmi-section{padding:80px 10%;text-align:center}
+.bmi-box input{padding:10px;border-radius:10px;border:none;margin:5px}
+
+/* Transform */
+.transformations{padding:80px 10%;text-align:center;background:#0f131a}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.ba-card{background:rgba(255,255,255,.05);padding:20px;border-radius:16px}
+.ba-images{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ba-images span{color:#cfa24a}
+
+/* Testimonials */
+.testimonials{padding:80px 10%;text-align:center}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.testimonial-card{background:rgba(255,255,255,.05);padding:20px;border-radius:16px}
+.testimonial-card img{width:80px;height:80px;border-radius:50%;margin:auto}
+
+/* Contact */
+.contact-premium{padding:80px 10%;text-align:center;background:#0f131a}
+.contact-socials a{font-size:24px;margin:10px;color:#cfa24a}
+.maps-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+.maps-container iframe{width:100%;height:220px;border:none;border-radius:12px}
+
+/* Footer */
+.footer{text-align:center;padding:30px;color:#777}
