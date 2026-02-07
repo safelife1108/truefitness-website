@@ -8,7 +8,9 @@ window.addEventListener("scroll", () => {
 
 // WhatsApp booking
 function bookWhatsApp() {
-  const msg = encodeURIComponent("Hi! I want to join True Fitness Club. Please help me with membership details.");
+  const msg = encodeURIComponent(
+    "Hi! I want to join True Fitness Club. Please send membership details."
+  );
   window.open("https://wa.me/919892857707?text=" + msg, "_blank");
 }
 
@@ -20,4 +22,16 @@ if (slider) {
   slider.addEventListener("input", function () {
     afterImg.style.clipPath = `inset(0 ${100 - this.value}% 0 0)`;
   });
+}
+
+// BMI Calculator
+function calcBMI() {
+  let height = document.getElementById("height").value / 100;
+  let weight = document.getElementById("weight").value;
+  if (!height || !weight) {
+    document.getElementById("bmiResult").innerText = "Please enter both values.";
+    return;
+  }
+  let bmi = (weight / (height * height)).toFixed(2);
+  document.getElementById("bmiResult").innerText = "Your BMI is " + bmi;
 }
