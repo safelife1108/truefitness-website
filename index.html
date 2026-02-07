@@ -3,127 +3,132 @@
 <head>
   <meta charset="UTF-8" />
   <title>True Fitness Club</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <!-- Scroll Progress -->
-<div id="progress-bar"></div>
+<div id="progress"></div>
 
-<header class="navbar">
-  <div class="logo">TRUE FITNESS</div>
+<!-- Header -->
+<header class="nav">
+  <div class="brand">TRUE<span>FITNESS</span></div>
   <nav>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#trainers">Trainers</a>
-    <a href="#plans">Plans</a>
-    <a href="#contact">Branches</a>
+    <a href="#experience">Experience</a>
+    <a href="#programs">Programs</a>
+    <a href="#team">Team</a>
+    <a href="#transform">Results</a>
+    <a href="#contact" class="cta">Start Now</a>
   </nav>
-  <div class="icons">
-    <a href="tel:9000000000"><i class="fa-solid fa-phone"></i></a>
-    <a href="https://wa.me/919000000000?text=Hello%20I%20want%20to%20join%20True%20Fitness%20Club" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://www.youtube.com/@truefitnessclubdummy" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-    <a href="https://www.instagram.com/true_fitness_club" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-  </div>
-  <button class="btn-gold" onclick="openBooking()">Book Now</button>
 </header>
 
 <!-- HERO -->
 <section class="hero" style="background-image:url('gym-hero.jpg')">
-  <div class="hero-overlay">
-    <h1>Build Your Body, Transform Your Life</h1>
-    <p>Premium Gym Experience with Expert Trainers</p>
-    <button class="btn-gold" onclick="openBooking()">Join Now</button>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Train Different.<br><span>Transform for Life.</span></h1>
+    <p>A premium fitness experience built for real results.</p>
+    <button onclick="bookWhatsApp()" class="primary-btn">Start Your Journey</button>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section" id="services">
-  <h2>Our Services</h2>
-  <div class="grid">
-    <div class="card"><img src="service1.jpg"><h3>Weight Training</h3></div>
-    <div class="card"><img src="service2.jpg"><h3>Cardio</h3></div>
-    <div class="card"><img src="service3.jpg"><h3>Personal Training</h3></div>
-    <div class="card"><img src="service4.jpg"><h3>CrossFit</h3></div>
+<!-- BRAND PROMISE -->
+<section class="promise">
+  <div class="promise-item">Built for <span>Results</span></div>
+  <div class="promise-item">Designed for <span>Performance</span></div>
+  <div class="promise-item">Crafted for <span>Transformation</span></div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="experience">
+  <div class="exp-text">
+    <h2>More than a gym.<br>It’s a <span>performance studio.</span></h2>
+    <p>
+      At True Fitness, we don’t just train bodies. We build discipline, confidence,
+      and long-term transformation with science-backed training and elite coaching.
+    </p>
+  </div>
+  <div class="exp-image">
+    <img src="service1.jpg" alt="Training Experience">
   </div>
 </section>
 
-<!-- GALLERY SLIDER -->
-<section class="section" id="gallery">
-  <h2>Gallery</h2>
-  <div class="slider">
-    <div class="slides">
-      <img src="service1.jpg">
+<!-- PROGRAMS -->
+<section id="programs" class="programs">
+  <h2>Our Training Programs</h2>
+  <div class="program-grid">
+    <div class="program-card">
       <img src="service2.jpg">
+      <h3>Strength & Power</h3>
+    </div>
+    <div class="program-card">
       <img src="service3.jpg">
+      <h3>Fat Loss & Conditioning</h3>
+    </div>
+    <div class="program-card">
       <img src="service4.jpg">
+      <h3>Personal Coaching</h3>
     </div>
   </div>
 </section>
 
-<!-- TRAINERS -->
-<section class="section" id="trainers">
-  <h2>Our Trainers</h2>
-  <div class="grid">
-    <div class="card"><img src="trainer1.jpg"><h3>Coach Raj</h3></div>
-    <div class="card"><img src="trainer2.jpg"><h3>Coach Aman</h3></div>
-    <div class="card"><img src="trainer3.jpg"><h3>Coach Neha</h3></div>
+<!-- TRANSFORMATION -->
+<section id="transform" class="transform">
+  <h2>Real People. Real Results.</h2>
+  <div class="before-after">
+    <img src="before.jpg" class="before">
+    <img src="after.jpg" class="after" id="afterImg">
+    <input type="range" min="0" max="100" value="50" id="baSlider">
   </div>
 </section>
 
-<!-- BEFORE AFTER SLIDER -->
-<section class="section">
-  <h2>Transformations</h2>
-  <div class="ba-slider">
-    <img src="service1.jpg" alt="Before">
-    <div class="resize">
-      <img src="service2.jpg" alt="After">
+<!-- TEAM -->
+<section id="team" class="team">
+  <h2>The Performance Team</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="trainer1.jpg">
+      <h4>Coach Raj</h4>
+      <span>Strength & Conditioning</span>
     </div>
-    <span class="handle"></span>
+    <div class="team-card">
+      <img src="trainer2.jpg">
+      <h4>Coach Aman</h4>
+      <span>Transformation Specialist</span>
+    </div>
+    <div class="team-card">
+      <img src="trainer3.jpg">
+      <h4>Coach Neha</h4>
+      <span>Functional Training</span>
+    </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="section" id="plans">
-  <h2>Membership Plans</h2>
-  <table class="pricing">
-    <tr><th>Plan</th><th>Monthly</th><th>Quarterly</th><th>Yearly</th></tr>
-    <tr><td>Basic</td><td>₹1500</td><td>₹4000</td><td>₹14000</td></tr>
-    <tr><td>Premium</td><td>₹2500</td><td>₹7000</td><td>₹24000</td></tr>
-    <tr><td>Personal</td><td>₹4000</td><td>₹11000</td><td>₹38000</td></tr>
-  </table>
-</section>
-
-<!-- BRANCHES MAP -->
-<section class="section" id="contact">
-  <h2>Our Branches</h2>
-  <div class="grid">
-    <iframe src="https://www.google.com/maps?q=Mahim,Mumbai&output=embed"></iframe>
-    <iframe src="https://www.google.com/maps?q=Dadar,Mumbai&output=embed"></iframe>
-    <iframe src="https://www.google.com/maps?q=Ghatkopar,Mumbai&output=embed"></iframe>
-    <iframe src="https://www.google.com/maps?q=Vashi,Navi%20Mumbai&output=embed"></iframe>
+<!-- CTA -->
+<section id="contact" class="final-cta">
+  <h2>Your transformation starts today.</h2>
+  <p>Join the elite training experience at True Fitness Club.</p>
+  <div class="cta-actions">
+    <button onclick="bookWhatsApp()" class="primary-btn">Book on WhatsApp</button>
+    <a href="tel:+919999999999" class="secondary-btn"><i class="fa-solid fa-phone"></i> Call Us</a>
+  </div>
+  <div class="socials">
+    <a href="https://www.instagram.com/true_fitness_club" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@truefitnessclub" target="_blank"><i class="fab fa-youtube"></i></a>
   </div>
 </section>
 
-<!-- BOOKING POPUP -->
-<div class="popup" id="bookingPopup">
-  <div class="popup-content">
-    <h2>Book Your Visit</h2>
-    <input id="bookName" placeholder="Name">
-    <input id="bookPhone" placeholder="Phone">
-    <button class="btn-gold" onclick="sendWhatsApp()">Send on WhatsApp</button>
-    <br><br>
-    <button onclick="closeBooking()">Close</button>
-  </div>
-</div>
-
-<!-- FLOATING WHATSAPP -->
-<a class="whatsapp-float" href="https://wa.me/919000000000?text=Hello%20I%20want%20to%20join%20True%20Fitness%20Club" target="_blank">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+<footer class="footer">
+  © 2026 True Fitness Club. Built for performance.
+</footer>
 
 <script src="script.js"></script>
 </body>
