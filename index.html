@@ -14,17 +14,15 @@
 </head>
 <body>
 
-<!-- Scroll Progress -->
 <div id="progress"></div>
 
-<!-- Header -->
 <header class="nav">
   <div class="brand">TRUE<span>FITNESS</span></div>
   <nav>
-    <a href="#experience">Experience</a>
     <a href="#programs">Programs</a>
-    <a href="#team">Team</a>
+    <a href="#festivals">Offers</a>
     <a href="#bmi">BMI</a>
+    <a href="#transformations">Results</a>
     <a href="#contact" class="cta">Contact</a>
   </nav>
 </header>
@@ -33,159 +31,140 @@
 <section class="hero" style="background-image:url('gym-hero.jpg')">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>Train Different.<br><span>Transform for Life.</span></h1>
-    <p>A premium fitness experience built for real results.</p>
+    <h1>Train Like a Beast.<br><span>Look Like a Champion.</span></h1>
+    <p>Premium training. Serious results. True Fitness Club.</p>
     <button onclick="bookWhatsApp()" class="primary-btn">Book on WhatsApp</button>
-  </div>
-</section>
-
-<!-- BRAND PROMISE -->
-<section class="promise">
-  <div class="promise-item">Built for <span>Results</span></div>
-  <div class="promise-item">Designed for <span>Performance</span></div>
-  <div class="promise-item">Crafted for <span>Transformation</span></div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="experience">
-  <div class="exp-text">
-    <h2>More than a gym.<br>It’s a <span>performance studio.</span></h2>
-    <p>
-      At True Fitness, we don’t just train bodies. We build discipline, confidence,
-      and long-term transformation with science-backed training and elite coaching.
-    </p>
-  </div>
-  <div class="exp-image">
-    <img src="service1.jpg" alt="Training Experience">
   </div>
 </section>
 
 <!-- PROGRAMS -->
 <section id="programs" class="programs">
-  <h2>Our Training Programs</h2>
+  <h2>Our Programs</h2>
   <div class="program-grid">
-    <div class="program-card">
-      <img src="service2.jpg">
-      <h3>Strength & Power</h3>
+    <div class="program-card"><img src="service1.jpg"><h3>Strength Training</h3></div>
+    <div class="program-card"><img src="service2.jpg"><h3>Fat Loss</h3></div>
+    <div class="program-card"><img src="service3.jpg"><h3>Personal Training</h3></div>
+    <div class="program-card"><img src="service4.jpg"><h3>Conditioning</h3></div>
+  </div>
+</section>
+
+<!-- FESTIVAL PACKAGES -->
+<section class="festival-packages" id="festivals">
+  <h2>Festive Special Packages</h2>
+  <p class="section-sub">Limited-time transformation offers</p>
+
+  <div class="festival-grid">
+    <div class="festival-card">
+      <h3>🪔 Diwali Fit India Pack</h3>
+      <p>12 Weeks Fat Loss Program</p>
+      <span class="price">₹9,999</span>
+      <button onclick="bookWhatsApp()" class="primary-btn small">Enquire</button>
     </div>
-    <div class="program-card">
-      <img src="service3.jpg">
-      <h3>Fat Loss & Conditioning</h3>
+
+    <div class="festival-card highlight">
+      <h3>🎉 New Year Transformation</h3>
+      <p>Complete Body Recomposition</p>
+      <span class="price">₹14,999</span>
+      <button onclick="bookWhatsApp()" class="primary-btn small">Join Now</button>
     </div>
-    <div class="program-card">
-      <img src="service4.jpg">
-      <h3>Personal Coaching</h3>
+
+    <div class="festival-card">
+      <h3>🌈 Holi Shred Challenge</h3>
+      <p>8 Weeks Shred Program</p>
+      <span class="price">₹6,999</span>
+      <button onclick="bookWhatsApp()" class="primary-btn small">Enquire</button>
+    </div>
+
+    <div class="festival-card">
+      <h3>🕉️ Navratri Bootcamp</h3>
+      <p>Special Training + Diet</p>
+      <span class="price">₹7,499</span>
+      <button onclick="bookWhatsApp()" class="primary-btn small">Join</button>
     </div>
   </div>
 </section>
 
-<!-- BMI CALCULATOR -->
+<!-- BMI -->
 <section id="bmi" class="bmi-section">
   <h2>Check Your BMI</h2>
   <div class="bmi-box">
-    <input id="height" type="number" placeholder="Height (cm)" />
-    <input id="weight" type="number" placeholder="Weight (kg)" />
-    <button class="primary-btn" onclick="calcBMI()">Calculate BMI</button>
+    <input id="height" type="number" placeholder="Height (cm)">
+    <input id="weight" type="number" placeholder="Weight (kg)">
+    <button class="primary-btn" onclick="calcBMI()">Calculate</button>
     <p id="bmiResult"></p>
   </div>
 </section>
 
-<!-- TRANSFORMATION -->
-<section id="transform" class="transform">
-  <h2>Real People. Real Results.</h2>
-  <div class="before-after">
-    <img src="before.jpg" class="before">
-    <img src="after.jpg" class="after" id="afterImg">
-    <input type="range" min="0" max="100" value="50" id="baSlider">
-  </div>
-</section>
+<!-- TRANSFORMATIONS -->
+<section class="transformations" id="transformations">
+  <h2>Real Transformations</h2>
 
-<!-- TEAM -->
-<section id="team" class="team">
-  <h2>The Performance Team</h2>
-  <div class="team-grid">
-    <div class="team-card">
-      <img src="trainer1.jpg">
-      <h4>Coach Raj</h4>
-      <span>Strength & Conditioning</span>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <h3>Men</h3>
+      <div class="ba-images">
+        <div><span>Before</span><img src="before-man.jpg"></div>
+        <div><span>After</span><img src="after-man.jpg"></div>
+      </div>
     </div>
-    <div class="team-card">
-      <img src="trainer2.jpg">
-      <h4>Coach Aman</h4>
-      <span>Transformation Specialist</span>
-    </div>
-    <div class="team-card">
-      <img src="trainer3.jpg">
-      <h4>Coach Neha</h4>
-      <span>Functional Training</span>
+
+    <div class="ba-card">
+      <h3>Women</h3>
+      <div class="ba-images">
+        <div><span>Before</span><img src="before-woman.jpg"></div>
+        <div><span>After</span><img src="after-woman.jpg"></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT / BRANCHES -->
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2>What Our Members Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <img src="client1.jpg">
+      <h4>Rahul Sharma</h4>
+      <p>Lost 12kg in 4 months. Best gym experience ever!</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="client2.jpg">
+      <h4>Neha Patel</h4>
+      <p>Premium trainers and great environment.</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="client3.jpg">
+      <h4>Amit Verma</h4>
+      <p>Serious results, serious training. Highly recommended.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact" class="contact-premium">
+  <h2>Contact & Branches</h2>
 
-  <h2>Contact & Branch Information</h2>
+  <div class="contact-details">
+    <p><i class="fas fa-envelope"></i> info@truefitnessclub.in</p>
+    <p><i class="fas fa-phone"></i> +91 98928 57707</p>
 
-  <div class="contact-container">
-
-    <!-- Official Info -->
-    <div class="contact-details">
-      <h3>Get In Touch</h3>
-
-      <p><i class="fas fa-phone"></i> <strong>Mahim:</strong> +91 98928 57707 / +91 75065 28977</p>
-      <p><i class="fas fa-phone"></i> <strong>Dadar:</strong> +91 75060 00136 / +91 98190 11556</p>
-      <p><i class="fas fa-phone"></i> <strong>Ghatkopar:</strong> +91 99308 89567 / +91 99308 89556</p>
-      <p><i class="fas fa-phone"></i> <strong>Vashi:</strong> +91 99872 88224 / +91 99672 88224</p>
-
-      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@truefitnessclub.in</p>
-
-      <div class="contact-socials">
-        <a href="https://www.instagram.com/true_fitness_club" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@truefitnessclub" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="tel:+919892857707"><i class="fas fa-phone"></i></a>
-        <a href="#" onclick="bookWhatsApp()"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-
-    <!-- Maps -->
-    <div class="maps-container">
-
-      <div class="map-box">
-        <h4>Mahim Branch</h4>
-        <iframe src="https://maps.google.com/maps?q=Devdarshan%20Building%20Mogul%20Lane%20Mahim%20Mumbai&output=embed"></iframe>
-      </div>
-
-      <div class="map-box">
-        <h4>Dadar Branch</h4>
-        <iframe src="https://maps.google.com/maps?q=Himmat%20Mansion%20Lady%20Jamshedji%20Rd%20Dadar%20Mumbai&output=embed"></iframe>
-      </div>
-
-      <div class="map-box">
-        <h4>Ghatkopar Branch</h4>
-        <iframe src="https://maps.google.com/maps?q=Rajgor%20Empire%20Building%20Near%20Metro%20Station%20Ghatkopar%20Mumbai&output=embed"></iframe>
-      </div>
-
-      <div class="map-box">
-        <h4>Vashi Branch</h4>
-        <iframe src="https://maps.google.com/maps?q=Krishna%20Residency%20Sector%2029%20Vashi%20Navi%20Mumbai&output=embed"></iframe>
-      </div>
-
+    <div class="contact-socials">
+      <a href="https://www.instagram.com/true_fitness_club" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@truefitnessclub" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#" onclick="bookWhatsApp()"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
-</section>
 
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <h2>Your transformation starts today.</h2>
-  <div class="cta-actions">
-    <button onclick="bookWhatsApp()" class="primary-btn">Book on WhatsApp</button>
-    <a href="tel:+919892857707" class="secondary-btn"><i class="fa-solid fa-phone"></i> Call Us</a>
+  <div class="maps-container">
+    <iframe src="https://maps.google.com/maps?q=Devdarshan%20Building%20Mogul%20Lane%20Mahim%20Mumbai&output=embed"></iframe>
+    <iframe src="https://maps.google.com/maps?q=Himmat%20Mansion%20Dadar%20Mumbai&output=embed"></iframe>
+    <iframe src="https://maps.google.com/maps?q=Rajgor%20Empire%20Ghatkopar%20Mumbai&output=embed"></iframe>
+    <iframe src="https://maps.google.com/maps?q=Krishna%20Residency%20Sector%2029%20Vashi&output=embed"></iframe>
   </div>
 </section>
 
 <footer class="footer">
-  © 2026 True Fitness Club. Built for performance.
+  © 2026 True Fitness Club
 </footer>
 
 <script src="script.js"></script>
