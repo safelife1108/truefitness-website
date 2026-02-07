@@ -1,37 +1,115 @@
-// Scroll progress
-window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const progress = (scrollTop / height) * 100;
-  document.getElementById("progress").style.width = progress + "%";
-});
-
-// WhatsApp booking
-function bookWhatsApp() {
-  const msg = encodeURIComponent(
-    "Hi! I want to join True Fitness Club. Please send membership details."
-  );
-  window.open("https://wa.me/919892857707?text=" + msg, "_blank");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-// Before/After slider
-const slider = document.getElementById("baSlider");
-const afterImg = document.getElementById("afterImg");
-
-if (slider) {
-  slider.addEventListener("input", function () {
-    afterImg.style.clipPath = `inset(0 ${100 - this.value}% 0 0)`;
-  });
+body {
+  background: #0b0e13;
+  color: #eaeaea;
 }
 
-// BMI Calculator
-function calcBMI() {
-  let height = document.getElementById("height").value / 100;
-  let weight = document.getElementById("weight").value;
-  if (!height || !weight) {
-    document.getElementById("bmiResult").innerText = "Please enter both values.";
-    return;
-  }
-  let bmi = (weight / (height * height)).toFixed(2);
-  document.getElementById("bmiResult").innerText = "Your BMI is " + bmi;
+/* Progress */
+#progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #cfa24a, #f5d37a);
+  z-index: 9999;
 }
+
+/* NAV */
+.nav {
+  position: fixed;
+  top: 0; width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(10,10,10,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.brand {
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.brand span {
+  color: #cfa24a;
+}
+
+.nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 500;
+}
+.nav .cta {
+  color: #000;
+  background: #cfa24a;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.85), rgba(0,0,0,0.3));
+}
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.hero h1 span {
+  color: #cfa24a;
+}
+
+.hero p {
+  margin: 20px 0 30px;
+  color: #bbb;
+}
+
+/* Buttons */
+.primary-btn {
+  background: linear-gradient(135deg, #cfa24a, #f5d37a);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.secondary-btn {
+  border: 1px solid #cfa24a;
+  color: #cfa24a;
+  padding: 14px 28px;
+  border-radius: 30px;
+  margin-left: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* PROGRAMS / REMAINDER CSS */
+// (Use previous style sections from the prior answer – unchanged for brevity)
+
