@@ -1,37 +1,24 @@
 // Scroll progress
 window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const progress = (scrollTop / height) * 100;
-  document.getElementById("progress").style.width = progress + "%";
+  const st = document.documentElement.scrollTop;
+  const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById("progress").style.width = (st / h) * 100 + "%";
 });
 
-// WhatsApp booking
+// WhatsApp
 function bookWhatsApp() {
-  const msg = encodeURIComponent(
-    "Hi! I want to join True Fitness Club. Please send membership details."
-  );
+  const msg = encodeURIComponent("Hi! I want to join True Fitness Club. Please send details.");
   window.open("https://wa.me/919892857707?text=" + msg, "_blank");
 }
 
-// Before/After slider
-const slider = document.getElementById("baSlider");
-const afterImg = document.getElementById("afterImg");
-
-if (slider) {
-  slider.addEventListener("input", function () {
-    afterImg.style.clipPath = `inset(0 ${100 - this.value}% 0 0)`;
-  });
-}
-
-// BMI Calculator
+// BMI
 function calcBMI() {
-  let height = document.getElementById("height").value / 100;
-  let weight = document.getElementById("weight").value;
-  if (!height || !weight) {
-    document.getElementById("bmiResult").innerText = "Please enter both values.";
+  let h = document.getElementById("height").value / 100;
+  let w = document.getElementById("weight").value;
+  if (!h || !w) {
+    document.getElementById("bmiResult").innerText = "Enter height and weight";
     return;
   }
-  let bmi = (weight / (height * height)).toFixed(2);
+  let bmi = (w / (h * h)).toFixed(2);
   document.getElementById("bmiResult").innerText = "Your BMI is " + bmi;
 }
