@@ -22,3 +22,11 @@ function calcBMI() {
   let bmi = (w / (h * h)).toFixed(2);
   document.getElementById("bmiResult").innerText = "Your BMI is " + bmi;
 }
+
+// 3D Tilt
+VanillaTilt.init(document.querySelectorAll(".tilt"), {
+  max: 10,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.2,
+});
