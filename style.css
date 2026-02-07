@@ -1,319 +1,35 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+// Scroll progress
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / height) * 100;
+  document.getElementById("progress").style.width = progress + "%";
+});
+
+// WhatsApp booking
+function bookWhatsApp() {
+  const msg = encodeURIComponent("Hi! I want to join True Fitness Club. Please send membership details.");
+  window.open("https://wa.me/919892857707?text=" + msg, "_blank");
 }
 
-/* GLOBAL IMAGE FIX */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+// Before/After slider
+const slider = document.getElementById("baSlider");
+const afterImg = document.getElementById("afterImg");
+
+if (slider) {
+  slider.addEventListener("input", function () {
+    afterImg.style.clipPath = `inset(0 ${100 - this.value}% 0 0)`;
+  });
 }
 
-body {
-  background: #0b0e13;
-  color: #eaeaea;
-}
-
-/* Progress */
-#progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 3px;
-  width: 0%;
-  background: linear-gradient(90deg, #cfa24a, #f5d37a);
-  z-index: 9999;
-}
-
-/* NAV */
-.nav {
-  position: fixed;
-  top: 0; width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: rgba(10,10,10,0.7);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-}
-
-.brand {
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-.brand span {
-  color: #cfa24a;
-}
-
-.nav a {
-  margin-left: 24px;
-  text-decoration: none;
-  color: #ccc;
-  font-weight: 500;
-}
-.nav .cta {
-  color: #000;
-  background: #cfa24a;
-  padding: 8px 16px;
-  border-radius: 20px;
-}
-
-/* HERO (FIXED SIZE) */
-.hero {
-  height: 70vh; /* FIX: no more huge image */
-  min-height: 420px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 10%;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.85), rgba(0,0,0,0.3));
-}
-
-.hero-content {
-  position: relative;
-  max-width: 600px;
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-  font-weight: 900;
-  line-height: 1.1;
-}
-
-.hero h1 span {
-  color: #cfa24a;
-}
-
-.hero p {
-  margin: 20px 0 30px;
-  color: #bbb;
-}
-
-/* Buttons */
-.primary-btn {
-  background: linear-gradient(135deg, #cfa24a, #f5d37a);
-  border: none;
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.secondary-btn {
-  border: 1px solid #cfa24a;
-  color: #cfa24a;
-  padding: 14px 28px;
-  border-radius: 30px;
-  margin-left: 10px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-/* PROMISE */
-.promise {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: #0f131a;
-  text-align: center;
-}
-.promise-item {
-  padding: 40px 20px;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-.promise-item span {
-  color: #cfa24a;
-}
-
-/* EXPERIENCE */
-.experience {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 80px 10%;
-  gap: 60px;
-  align-items: center;
-}
-.exp-text h2 {
-  font-size: 2.2rem;
-}
-.exp-text span {
-  color: #cfa24a;
-}
-.exp-image img {
-  border-radius: 20px;
-}
-
-/* PROGRAMS */
-.programs {
-  padding: 80px 10%;
-  text-align: center;
-}
-.program-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-.program-card {
-  background: #11161f;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.program-card img {
-  height: 220px;
-  object-fit: cover;
-}
-.program-card h3 {
-  padding: 20px;
-}
-
-/* BMI */
-.bmi-section {
-  padding: 80px 10%;
-  text-align: center;
-}
-.bmi-box input {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: none;
-  margin: 5px;
-}
-
-/* TRANSFORM */
-.transform {
-  padding: 80px 10%;
-  text-align: center;
-}
-.before-after {
-  position: relative;
-  max-width: 600px;
-  margin: 40px auto 0;
-}
-.before-after img {
-  border-radius: 20px;
-}
-.after {
-  position: absolute;
-  top: 0; left: 0;
-  clip-path: inset(0 50% 0 0);
-}
-.before-after input {
-  width: 100%;
-  margin-top: 20px;
-}
-
-/* TEAM */
-.team {
-  padding: 80px 10%;
-  text-align: center;
-}
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-.team-card {
-  background: #11161f;
-  padding: 20px;
-  border-radius: 20px;
-}
-.team-card img {
-  border-radius: 16px;
-}
-.team-card span {
-  color: #cfa24a;
-  font-size: 0.9rem;
-}
-
-/* CONTACT */
-.contact-premium {
-  padding: 80px 10%;
-  background: #0f131a;
-  text-align: center;
-}
-.contact-premium h2 {
-  color: #cfa24a;
-  margin-bottom: 30px;
-}
-.contact-container {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 30px;
-}
-.contact-details {
-  text-align: left;
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 16px;
-}
-.contact-details h3 {
-  color: #f5d37a;
-  margin-bottom: 15px;
-}
-.contact-details p {
-  margin: 10px 0;
-}
-.contact-details i {
-  color: #cfa24a;
-  margin-right: 8px;
-}
-.contact-socials {
-  margin-top: 20px;
-}
-.contact-socials a {
-  font-size: 26px;
-  margin-right: 15px;
-  color: #f5d37a;
-}
-
-.maps-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 20px;
-}
-.map-box h4 {
-  color: #cfa24a;
-  margin-bottom: 8px;
-}
-.map-box iframe {
-  width: 100%;
-  height: 220px;
-  border: none;
-  border-radius: 12px;
-}
-
-/* FINAL CTA */
-.final-cta {
-  padding: 100px 10%;
-  text-align: center;
-}
-
-/* FOOTER */
-.footer {
-  padding: 30px;
-  text-align: center;
-  color: #777;
-}
-
-/* RESPONSIVE */
-@media(max-width: 900px) {
-  .experience {
-    grid-template-columns: 1fr;
+// BMI Calculator
+function calcBMI() {
+  let height = document.getElementById("height").value / 100;
+  let weight = document.getElementById("weight").value;
+  if (!height || !weight) {
+    document.getElementById("bmiResult").innerText = "Please enter both values.";
+    return;
   }
-  .promise {
-    grid-template-columns: 1fr;
-  }
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
+  let bmi = (weight / (height * height)).toFixed(2);
+  document.getElementById("bmiResult").innerText = "Your BMI is " + bmi;
 }
