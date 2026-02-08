@@ -20,7 +20,6 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
 // Init styles for animation
 sections.forEach(sec => {
   sec.style.opacity = 0;
