@@ -1,29 +1,39 @@
-// Loader
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  loader.style.opacity = "0";
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 500);
+// Custom Cursor
+const dot = document.querySelector(".cursor-dot");
+const ring = document.querySelector(".cursor-ring");
+
+window.addEventListener("mousemove", (e) => {
+  dot.style.left = e.clientX + "px";
+  dot.style.top = e.clientY + "px";
+  ring.style.left = e.clientX + "px";
+  ring.style.top = e.clientY + "px";
 });
 
-// Simple scroll reveal
-const sections = document.querySelectorAll(".section");
+// 3D Tilt Effect
+document.querySelectorAll(".tilt").forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-window.addEventListener("scroll", () => {
-  const trigger = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < trigger) {
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-    }
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = (y - centerY) / 15;
+    const rotateY = (centerX - x) / 15;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0) rotateY(0) scale(1)";
   });
 });
 
-// Init styles for animation
-sections.forEach(sec => {
-  sec.style.opacity = 0;
-  sec.style.transform = "translateY(40px)";
-  sec.style.transition = "0.8s ease";
+// Hero Parallax
+const heroBg = document.querySelector(".hero-bg");
+window.addEventListener("mousemove", (e) => {
+  const x = (window.innerWidth / 2 - e.clientX) / 50;
+  const y = (window.innerHeight / 2 - e.clientY) / 50;
+  heroBg.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
 });
