@@ -1,72 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>True Fitness — Final Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>True Fitness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Dumbbell Cursor -->
-<div class="dumbbell-cursor"><div class="dumbbell-bar"></div></div>
+<div class="cursor"></div>
 
 <header class="navbar">
   <div class="logo">TRUE FITNESS</div>
   <nav>
     <a href="#programs">Programs</a>
-    <a href="#world">World</a>
+    <a href="#results">Results</a>
+    <a href="#branches">Branches</a>
     <a href="#join">Join</a>
   </nav>
-  <a class="whatsapp-btn btn" href="https://wa.me/919999999999" target="_blank">Book on WhatsApp</a>
+  <a class="btn small" href="#join">Book on WhatsApp</a>
 </header>
 
 <section class="hero">
-  <canvas id="bg3d"></canvas>
-  <div class="hero-content glitch-in">
-    <h1 class="glitch" data-text="FINAL FORM">FINAL FORM</h1>
-    <h1><span>TRANSCEND REALITY</span></h1>
-    <p>A cinematic 3D experience. Scroll to fly. Move to bend space.</p>
+  <div class="hero-content">
+    <h1>Elite Performance.<br><span>Serious Results.</span></h1>
+    <p>Not a gym. A transformation lab.</p>
     <div class="hero-buttons">
-      <a href="#programs" class="btn primary">Enter</a>
-      <a href="#join" class="btn outline">Start Now</a>
+      <a class="btn" href="#programs">View Programs</a>
+      <a class="btn outline" href="#join">Start Now</a>
     </div>
   </div>
 </section>
 
-<section class="section reveal scene" id="programs">
-  <h2>Programs (3D Panels)</h2>
+<section id="programs" class="section">
+  <h2>Programs</h2>
   <div class="cards">
-    <div class="card tilt">Strength</div>
-    <div class="card tilt">Fat Loss</div>
-    <div class="card tilt">Coaching</div>
-    <div class="card tilt">Conditioning</div>
+    <div class="card">
+      <img src="assets/program1.jpg" />
+      <h3>Strength Training</h3>
+    </div>
+    <div class="card">
+      <img src="assets/program2.jpg" />
+      <h3>Fat Loss</h3>
+    </div>
+    <div class="card">
+      <img src="assets/program3.jpg" />
+      <h3>Personal Coaching</h3>
+    </div>
+    <div class="card">
+      <img src="assets/program4.jpg" />
+      <h3>Conditioning</h3>
+    </div>
   </div>
 </section>
 
-<section class="section reveal scene" id="world">
-  <h2>The World</h2>
-  <p>Scroll moves the camera. Cursor bends the universe.</p>
-  <div class="stats">
-    <div><div class="stat" data-target="10000">0</div><div class="stat-label">Clients</div></div>
-    <div><div class="stat" data-target="12">0</div><div class="stat-label">Years</div></div>
-    <div><div class="stat" data-target="4">0</div><div class="stat-label">Branches</div></div>
-    <div><div class="stat" data-target="95">0</div><div class="stat-label">% Success</div></div>
+<section class="section stats">
+  <div class="stat"><span data-count="5000">0</span><p>Clients</p></div>
+  <div class="stat"><span data-count="10">0</span><p>Years</p></div>
+  <div class="stat"><span data-count="4">0</span><p>Branches</p></div>
+  <div class="stat"><span data-count="99">0</span><p>% Success</p></div>
+</section>
+
+<section id="results" class="section">
+  <h2>Real Transformations</h2>
+  <div class="ba-container">
+    <img src="assets/before.jpg" class="before">
+    <img src="assets/after.jpg" class="after" id="afterImg">
+    <input type="range" min="0" max="100" value="50" id="slider">
   </div>
 </section>
 
-<section class="cta reveal scene" id="join">
-  <h2>Join the Next Level</h2>
-  <p>Message us on WhatsApp and step into the experience.</p>
-  <a class="btn primary big" href="https://wa.me/919999999999" target="_blank">Book on WhatsApp</a>
+<section id="branches" class="section">
+  <h2>Our Branches</h2>
+  <div class="maps">
+    <iframe src="https://www.google.com/maps?q=Mahim,Mumbai&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Vashi,Navi%20Mumbai&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Ghatkopar,Mumbai&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Dadar,Mumbai&output=embed"></iframe>
+  </div>
+</section>
+
+<section id="join" class="section cta">
+  <h2>Start Your Journey</h2>
+  <p>Message us on WhatsApp and book your first session.</p>
+  <a class="btn big" href="#">Book on WhatsApp</a>
 </section>
 
 <footer>
   <p>© 2026 True Fitness. All rights reserved.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
