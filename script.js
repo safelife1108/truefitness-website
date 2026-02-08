@@ -1,95 +1,44 @@
 // Loader
-const loader = document.getElementById("loader");
 window.addEventListener("load", () => {
-  setTimeout(() => { loader.style.display = "none"; }, 2000);
+  setTimeout(() => {
+    document.getElementById("loader").style.display = "none";
+  }, 1500);
 });
 
-// Cursor
-const cursor = document.getElementById("cursor");
-document.addEventListener("mousemove", e => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
+// Gallery slider
+const images = [
+  "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200",
+  "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=1200",
+  "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1200"
+];
+let index = 0;
+const slide = document.getElementById("slide");
 
-// Gallery
-let currentSlide = 0;
-const slides = document.querySelector(".gallery-slider .slides");
-const totalSlides = slides.children.length;
-document.querySelector(".g-next").onclick = () => {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-};
-document.querySelector(".g-prev").onclick = () => {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-};
+function nextSlide() {
+  index = (index + 1) % images.length;
+  slide.src = images[index];
+}
+function prevSlide() {
+  index = (index - 1 + images.length) % images.length;
+  slide.src = images[index];
+}
 
-// Before After
-const baSlider = document.getElementById("baSlider");
-const afterImg = document.querySelector(".after");
-baSlider.addEventListener("input", () => {
-  afterImg.style.width = baSlider.value + "%";
-});
-
-// Booking popup
-const bookBtn = document.querySelector(".book-btn");
-const popup = document.getElementById("bookingPopup");
-const closePopup = document.querySelector(".close-popup");
-bookBtn.onclick = () => popup.style.display = "flex";
-closePopup.onclick = () => popup.style.display = "none";
-
-// Sound
-const sound = document.getElementById("clickSound");
-document.querySelectorAll(".sound").forEach(btn => {
-  btn.addEventListener("click", () => {
-    sound.currentTime = 0;
-    sound.play();
-  });
-});
-
-// Stats counter
-document.querySelectorAll(".count").forEach(counter => {
-  const update = () => {
-    const target = +counter.dataset.target;
-    const current = +counter.innerText;
-    const inc = target / 100;
-    if (current < target) {
-      counter.innerText = Math.ceil(current + inc);
-      setTimeout(update, 30);
-    } else {
-      counter.innerText = target;
-    }
-  };
-  update();
-});
-
-// Scroll reveal
-const sections = document.querySelectorAll("section");
-const reveal = () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-    }
-  });
-};
-sections.forEach(sec => {
-  sec.style.opacity = 0;
-  sec.style.transform = "translateY(60px)";
-  sec.style.transition = "1s ease";
-});
-window.addEventListener("scroll", reveal);
-reveal();
+// Auto slide
+setInterval(nextSlide, 4000);
 
 // BMI
 function calculateBMI() {
-  const h = document.getElementById("bmiHeight").value / 100;
-  const w = document.getElementById("bmiWeight").value;
-  if (!h || !w) return;
-  const bmi = (w / (h * h)).toFixed(1);
-  let status = "Normal";
+  const h = document.getElementById("height").value / 100;
+  const w = document.getElementById("weight").value;
+  if (!h || !w) {
+    document.getElementById("bmiResult").innerText = "Please enter valid values.";
+    return;
+  }
+  const bmi = (w / (h * h)).toFixed(2);
+  let status = "";
   if (bmi < 18.5) status = "Underweight";
-  else if (bmi > 25) status = "Overweight";
+  else if (bmi < 25) status = "Normal";
+  else if (bmi < 30) status = "Overweight";
+  else status = "Obese";
   document.getElementById("bmiResult").innerText = `Your BMI: ${bmi} (${status})`;
 }
