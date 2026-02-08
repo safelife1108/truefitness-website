@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>True Fitness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,13 +12,14 @@
   <div class="loader-text">TRUE FITNESS</div>
 </div>
 
-<div class="cursor" id="cursor"></div>
+<div id="cursor"></div>
 
 <header class="navbar">
   <div class="logo">TRUE FITNESS</div>
   <nav>
     <a href="#home">Home</a>
     <a href="#programs">Programs</a>
+    <a href="#gallery">Gallery</a>
     <a href="#transform">Transform</a>
     <a href="#branches">Branches</a>
     <a href="#contact" class="join">Join</a>
@@ -28,14 +29,14 @@
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-foreground">
-    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1200" alt="Athlete" />
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1200" alt="Athlete">
   </div>
   <div class="hero-content">
     <h1>ELITE PERFORMANCE.<br><span>SERIOUS RESULTS.</span></h1>
     <p>Not a gym. A transformation lab.</p>
     <div class="hero-buttons">
-      <button class="btn primary">View Programs</button>
-      <button class="btn outline">Start Now</button>
+      <a href="#programs" class="btn primary sound">View Programs</a>
+      <a href="#contact" class="btn outline sound">Start Now</a>
     </div>
   </div>
 </section>
@@ -43,35 +44,49 @@
 <section class="programs" id="programs">
   <h2>Programs</h2>
   <div class="cards">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800" />
-      <h3>Strength</h3>
+    <div class="card"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800"><h3>Strength</h3></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=800"><h3>Fat Loss</h3></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800"><h3>Personal Coach</h3></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?q=80&w=800"><h3>Conditioning</h3></div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery-slider">
+    <div class="slides">
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=1200">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200">
+      <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?q=80&w=1200">
     </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=800" />
-      <h3>Fat Loss</h3>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800" />
-      <h3>Personal Coach</h3>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?q=80&w=800" />
-      <h3>Conditioning</h3>
-    </div>
+    <button class="g-prev">‹</button>
+    <button class="g-next">›</button>
   </div>
 </section>
 
 <section class="transform" id="transform">
   <h2>Real Transformations</h2>
   <div class="slider-container">
-    <div class="img before">
-      <img src="https://images.unsplash.com/photo-1594737625785-cf9c49d1b21f?q=80&w=800">
-    </div>
-    <div class="img after">
-      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=800">
-    </div>
-    <input type="range" min="0" max="100" value="50" id="slider">
+    <div class="before"><img src="https://images.unsplash.com/photo-1594737625785-cf9c49d1b21f?q=80&w=800"></div>
+    <div class="after"><img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=800"></div>
+    <input type="range" min="0" max="100" value="50" id="baSlider">
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>Testimonials</h2>
+  <div class="test-grid">
+    <div class="test-card"><img src="https://randomuser.me/api/portraits/men/32.jpg"><p>Lost 10kg in 3 months!</p><h4>Rahul</h4></div>
+    <div class="test-card"><img src="https://randomuser.me/api/portraits/women/44.jpg"><p>Best gym in my life.</p><h4>Neha</h4></div>
+    <div class="test-card"><img src="https://randomuser.me/api/portraits/men/65.jpg"><p>Real results, real trainers.</p><h4>Amit</h4></div>
+  </div>
+</section>
+
+<section class="instagram">
+  <h2>Instagram</h2>
+  <div class="insta-embed">
+    <iframe src="https://www.instagram.com/true_fitness_club/embed" width="100%" height="480" frameborder="0"></iframe>
   </div>
 </section>
 
@@ -87,15 +102,27 @@
 
 <section class="contact" id="contact">
   <h2>Start Your Journey</h2>
-  <p>Message us on WhatsApp or Call now</p>
   <div class="contact-buttons">
-    <a href="#" class="btn primary">WhatsApp</a>
-    <a href="#" class="btn outline">Call Now</a>
+    <a href="https://wa.me/911234567890?text=Hi%20I%20want%20to%20join%20True%20Fitness" class="btn primary sound" target="_blank">WhatsApp</a>
+    <a href="tel:911234567890" class="btn outline sound">Call</a>
     <a href="#" class="btn outline">Instagram</a>
     <a href="#" class="btn outline">YouTube</a>
     <a href="#" class="btn outline">Facebook</a>
   </div>
 </section>
+
+<button class="book-btn">Book Free Trial</button>
+
+<div class="popup" id="bookingPopup">
+  <div class="popup-content">
+    <span class="close-popup">×</span>
+    <h2>Book Free Trial</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="tel" placeholder="Phone Number">
+    <input type="email" placeholder="Email">
+    <button class="btn primary">Submit</button>
+  </div>
+</div>
 
 <footer>
   © 2026 True Fitness. All rights reserved.
