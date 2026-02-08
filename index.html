@@ -18,6 +18,7 @@
     <a href="#programs">Programs</a>
     <a href="#gallery">Gallery</a>
     <a href="#transform">Transform</a>
+    <a href="#bmi">BMI</a>
     <a href="#branches">Branches</a>
     <a href="#contact" class="join">Join</a>
   </nav>
@@ -26,7 +27,7 @@
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-foreground">
-    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1200">
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1200" alt="Athlete">
   </div>
   <div class="hero-content">
     <h1>ELITE PERFORMANCE.<br><span>SERIOUS RESULTS.</span></h1>
@@ -75,6 +76,16 @@
     <div class="before"><img src="https://images.unsplash.com/photo-1594737625785-cf9c49d1b21f?q=80&w=800"></div>
     <div class="after"><img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=800"></div>
     <input type="range" min="0" max="100" value="50" id="baSlider">
+  </div>
+</section>
+
+<section class="bmi" id="bmi">
+  <h2>BMI Calculator</h2>
+  <div class="bmi-box">
+    <input type="number" id="bmiHeight" placeholder="Height (cm)">
+    <input type="number" id="bmiWeight" placeholder="Weight (kg)">
+    <button class="btn primary" onclick="calculateBMI()">Calculate</button>
+    <p id="bmiResult"></p>
   </div>
 </section>
 
