@@ -2,85 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>True Fitness</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Loader -->
-  <div id="loader">Loading True Fitness...</div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">TRUE FITNESS</div>
-    <nav>
-      <a href="#programs">Programs</a>
-      <a href="#branches">Branches</a>
-      <a href="#testimonials">Results</a>
-      <a href="#contact">Join</a>
-    </nav>
-    <a class="cta" href="https://wa.me/91XXXXXXXXXX" target="_blank">Book on WhatsApp</a>
-  </header>
+<header class="navbar">
+  <div class="logo">TRUE FITNESS</div>
+  <nav>
+    <a href="#programs">Programs</a>
+    <a href="#branches">Branches</a>
+    <a href="#results">Results</a>
+    <a href="#join">Join</a>
+  </nav>
+  <a class="whatsapp-btn" href="https://wa.me/91XXXXXXXXXX" target="_blank">Book on WhatsApp</a>
+</header>
 
-  <!-- Hero -->
-  <section class="hero">
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
     <h1>Elite Performance.<br><span>Serious Results.</span></h1>
     <p>Not a gym. A transformation lab. Train smarter with a cinematic experience.</p>
     <div class="hero-buttons">
-      <a href="#programs" class="btn">View Programs</a>
-      <a href="#contact" class="btn outline">Start Now</a>
+      <a href="#programs" class="btn primary">View Programs</a>
+      <a href="#join" class="btn outline">Start Now</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Programs -->
-  <section id="programs" class="section">
-    <h2>Programs</h2>
-    <div class="cards">
-      <div class="card">Strength Training</div>
-      <div class="card">Fat Loss</div>
-      <div class="card">Personal Coaching</div>
-      <div class="card">Conditioning</div>
-    </div>
-  </section>
+<section class="section" id="programs">
+  <h2>Programs</h2>
+  <div class="cards">
+    <div class="card tilt">Strength Training</div>
+    <div class="card tilt">Fat Loss</div>
+    <div class="card tilt">Personal Coaching</div>
+    <div class="card tilt">Conditioning</div>
+  </div>
+</section>
 
-  <!-- Before After -->
-  <section id="testimonials" class="section">
-    <h2>Real Transformations</h2>
-    <div class="before-after">
-      <div class="ba-card">Before → After (Male)</div>
-      <div class="ba-card">Before → After (Female)</div>
-    </div>
-  </section>
+<section class="section" id="results">
+  <h2>Real Transformations</h2>
+  <div class="results">
+    <div class="result-card tilt">Before → After (Male)</div>
+    <div class="result-card tilt">Before → After (Female)</div>
+  </div>
+</section>
 
-  <!-- Branches -->
-  <section id="branches" class="section">
-    <h2>Our Branches</h2>
-    <div class="branches">
-      <div class="branch">Mahim</div>
-      <div class="branch">Vashi</div>
-      <div class="branch">Ghatkopar</div>
-      <div class="branch">Dadar</div>
-    </div>
-  </section>
+<section class="section" id="branches">
+  <h2>Our Branches</h2>
+  <div class="cards">
+    <div class="card tilt">Mahim</div>
+    <div class="card tilt">Dadar</div>
+    <div class="card tilt">Ghatkopar</div>
+    <div class="card tilt">Vashi</div>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Start Your Journey</h2>
-    <p>Message us on WhatsApp and book your first session.</p>
-    <a class="btn big" href="https://wa.me/91XXXXXXXXXX" target="_blank">Book on WhatsApp</a>
-  </section>
+<section class="cta" id="join">
+  <h2>Start Your Journey</h2>
+  <p>Message us on WhatsApp and book your first session.</p>
+  <a class="btn primary big" href="https://wa.me/91XXXXXXXXXX" target="_blank">Book on WhatsApp</a>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 True Fitness. All rights reserved.</p>
-    <div class="socials">
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
-      <a href="#">Facebook</a>
-    </div>
-  </footer>
+<footer>
+  <p>© 2026 True Fitness. All rights reserved.</p>
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">YouTube</a>
+    <a href="#">Facebook</a>
+  </div>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
