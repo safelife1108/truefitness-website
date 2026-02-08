@@ -1,103 +1,124 @@
-// ===== Smooth Scroll (Lenis) =====
-const lenis = new Lenis({ duration: 1.1, smooth: true });
-function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
-requestAnimationFrame(raf);
+// Loader
+window.addEventListener("load",()=>{document.getElementById("loader").style.display="none"})
 
-// ===== Preloader =====
-window.addEventListener("load", ()=>{
-  setTimeout(()=>{
-    const p = document.getElementById("brand-preloader");
-    if(p){ p.style.opacity="0"; setTimeout(()=>p.remove(), 600); }
-  }, 1500);
+// Scroll progress
+window.addEventListener("scroll",()=>{
+  const h=document.documentElement;
+  const sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById("progress").style.width=sc+"%";
 });
 
-// ===== Custom Cursor (physics) =====
-const cursor = document.getElementById("cursor");
-const blur = document.getElementById("cursor-blur");
-let cx=0, cy=0, tx=0, ty=0;
-document.addEventListener("mousemove", e=>{ tx=e.clientX; ty=e.clientY; });
-(function animateCursor(){
-  cx += (tx-cx)*0.15; cy += (ty-cy)*0.15;
-  cursor.style.left=cx+"px"; cursor.style.top=cy+"px";
-  blur.style.left=cx+"px"; blur.style.top=cy+"px";
-  requestAnimationFrame(animateCursor);
-})();
-
-// ===== GSAP Scenes =====
-gsap.registerPlugin(ScrollTrigger);
-gsap.utils.toArray(".section, .chapter").forEach(el=>{
-  gsap.from(el, {
-    scrollTrigger:{ trigger:el, start:"top 80%" },
-    y:120, opacity:0, duration:1.1, ease:"power4.out"
-  });
+// Cursor
+const c=document.querySelector(".cursor");
+const ct=document.querySelector(".cursor-trail");
+window.addEventListener("mousemove",e=>{
+  c.style.left=e.clientX+"px"; c.style.top=e.clientY+"px";
+  ct.style.left=e.clientX+"px"; ct.style.top=e.clientY+"px";
 });
 
-// ===== Magnetic Buttons =====
-document.querySelectorAll(".btn").forEach(btn=>{
-  btn.addEventListener("mousemove", e=>{
-    const r=btn.getBoundingClientRect();
-    const x=e.clientX-r.left-r.width/2, y=e.clientY-r.top-r.height/2;
-    btn.style.transform=`translate(${x*0.25}px,${y*0.25}px)`;
-  });
-  btn.addEventListener("mouseleave", ()=>btn.style.transform="translate(0,0)");
-});
+// Reveal on scroll
+const reveals=document.querySelectorAll(".reveal");
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("show"); });
+},{threshold:.2});
+reveals.forEach(r=>obs.observe(r));
 
-// ===== 3D Tilt Cards =====
-document.querySelectorAll(".tilt-card").forEach(card=>{
-  card.addEventListener("mousemove", e=>{
+// Tilt cards
+document.querySelectorAll(".tilt").forEach(card=>{
+  card.addEventListener("mousemove",e=>{
     const r=card.getBoundingClientRect();
-    const x=e.clientX-r.left-r.width/2, y=e.clientY-r.top-r.height/2;
-    card.style.transform=`rotateX(${-y/12}deg) rotateY(${x/12}deg) translateZ(20px)`;
+    const x=e.clientX-r.left, y=e.clientY-r.top;
+    const rx=(y/r.height-.5)*-10, ry=(x/r.width-.5)*10;
+    card.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;
   });
-  card.addEventListener("mouseleave", ()=>card.style.transform="rotateX(0) rotateY(0) translateZ(0)");
+  card.addEventListener("mouseleave",()=>card.style.transform="rotateX(0) rotateY(0)");
 });
 
-// ===== WebGL Liquid Neon Background =====
-const canvas = document.getElementById("bg-canvas");
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(70, innerWidth/innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true });
-renderer.setSize(innerWidth, innerHeight);
-camera.position.z = 4;
-
-// Plane grid (wave)
-const geo = new THREE.PlaneGeometry(10, 6, 140, 140);
-const mat = new THREE.MeshStandardMaterial({
-  color: 0x00f6ff, wireframe:true, transparent:true, opacity:0.35
+// Before After
+const slider=document.getElementById("ba-slider");
+const after=document.getElementById("ba-after");
+let dragging=false;
+slider.addEventListener("mousedown",()=>dragging=true);
+window.addEventListener("mouseup",()=>dragging=false);
+window.addEventListener("mousemove",e=>{
+  if(!dragging) return;
+  const box=slider.parentElement.getBoundingClientRect();
+  let x=e.clientX-box.left;
+  x=Math.max(0,Math.min(x,box.width));
+  slider.style.left=x+"px";
+  after.style.width=x+"px";
 });
-const plane = new THREE.Mesh(geo, mat);
-scene.add(plane);
 
-// Lights
-const l1 = new THREE.PointLight(0x00f6ff, 2, 100); l1.position.set(5,5,5); scene.add(l1);
-const l2 = new THREE.PointLight(0x7b5cff, 2, 100); l2.position.set(-5,-5,5); scene.add(l2);
+// Counters
+document.querySelectorAll(".stat").forEach(el=>{
+  let done=false;
+  const io=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting && !done){
+      done=true; let n=0; const t=+el.dataset.target;
+      const i=setInterval(()=>{
+        n+=Math.ceil(t/100);
+        if(n>=t){n=t;clearInterval(i)}
+        el.textContent=n;
+      },30);
+    }
+  },{threshold:.6});
+  io.observe(el);
+});
 
-// Animate waves
-let t=0;
+// THREE.JS HERO
+const canvas=document.getElementById("threebg");
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({canvas,alpha:true});
+renderer.setSize(innerWidth,innerHeight);
+
+const geo=new THREE.TorusKnotGeometry(1.6,0.5,140,20);
+const mat=new THREE.MeshStandardMaterial({color:0x00ffd5,wireframe:true});
+const mesh=new THREE.Mesh(geo,mat);
+scene.add(mesh);
+
+const light=new THREE.PointLight(0xffffff,1);
+light.position.set(5,5,5);
+scene.add(light);
+
+camera.position.z=6;
+
 function animate(){
   requestAnimationFrame(animate);
-  t+=0.01;
-  const pos = plane.geometry.attributes.position;
-  for(let i=0;i<pos.count;i++){
-    const x = pos.getX(i), y = pos.getY(i);
-    const z = Math.sin(x*2 + t)*0.25 + Math.cos(y*2 + t)*0.25;
-    pos.setZ(i, z);
-  }
-  pos.needsUpdate = true;
-  plane.rotation.z += 0.0006;
-  renderer.render(scene, camera);
+  mesh.rotation.x+=0.002;
+  mesh.rotation.y+=0.003;
+  renderer.render(scene,camera);
 }
 animate();
 
-addEventListener("resize", ()=>{
-  camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
-  renderer.setSize(innerWidth, innerHeight);
+window.addEventListener("resize",()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
 });
 
-// ===== WhatsApp =====
-const phone="919999999999"; // replace with real
-const msg=encodeURIComponent("Hi, I want to join True Fitness Club!");
-const w1=document.getElementById("whatsappBtn");
-const w2=document.getElementById("whatsappFloat");
-if(w1) w1.href=`https://wa.me/${phone}?text=${msg}`;
-if(w2) w2.href=`https://wa.me/${phone}?text=${msg}`;
+// PARTICLES
+const pCanvas=document.getElementById("particles");
+const ctx=pCanvas.getContext("2d");
+function resizeP(){pCanvas.width=innerWidth;pCanvas.height=innerHeight}
+resizeP();window.addEventListener("resize",resizeP);
+
+let particles=Array.from({length:100},()=>({
+  x:Math.random()*innerWidth,
+  y:Math.random()*innerHeight,
+  vx:(Math.random()-.5),
+  vy:(Math.random()-.5)
+}));
+
+function drawParticles(){
+  ctx.clearRect(0,0,pCanvas.width,pCanvas.height);
+  particles.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>innerWidth) p.vx*=-1;
+    if(p.y<0||p.y>innerHeight) p.vy*=-1;
+    ctx.fillStyle="#00ffd5";
+    ctx.fillRect(p.x,p.y,2,2);
+  });
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
