@@ -1,146 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>True Fitness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>True Fitness — Final Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="cursor-dot"></div>
-<div class="cursor-ring"></div>
+<!-- Dumbbell Cursor -->
+<div class="dumbbell-cursor"><div class="dumbbell-bar"></div></div>
 
 <header class="navbar">
   <div class="logo">TRUE FITNESS</div>
   <nav>
     <a href="#programs">Programs</a>
-    <a href="#results">Results</a>
-    <a href="#branches">Branches</a>
+    <a href="#world">World</a>
     <a href="#join">Join</a>
   </nav>
-  <a class="whatsapp-btn" href="https://wa.me/919999999999" target="_blank">Book on WhatsApp</a>
+  <a class="whatsapp-btn btn" href="https://wa.me/919999999999" target="_blank">Book on WhatsApp</a>
 </header>
 
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <h1>Elite Performance.<br><span>Serious Results.</span></h1>
-    <p>Not a gym. A transformation lab. Train smarter with a cinematic experience.</p>
+<section class="hero">
+  <canvas id="bg3d"></canvas>
+  <div class="hero-content glitch-in">
+    <h1 class="glitch" data-text="FINAL FORM">FINAL FORM</h1>
+    <h1><span>TRANSCEND REALITY</span></h1>
+    <p>A cinematic 3D experience. Scroll to fly. Move to bend space.</p>
     <div class="hero-buttons">
-      <a href="#programs" class="btn primary">View Programs</a>
+      <a href="#programs" class="btn primary">Enter</a>
       <a href="#join" class="btn outline">Start Now</a>
     </div>
   </div>
 </section>
 
-<!-- Programs -->
-<section class="section reveal" id="programs">
-  <h2>Programs</h2>
+<section class="section reveal scene" id="programs">
+  <h2>Programs (3D Panels)</h2>
   <div class="cards">
-    <div class="card tilt">
-      <img src="assets/strength.jpg" alt="Strength">
-      <h3>Strength Training</h3>
-    </div>
-    <div class="card tilt">
-      <img src="assets/fatloss.jpg" alt="Fat Loss">
-      <h3>Fat Loss</h3>
-    </div>
-    <div class="card tilt">
-      <img src="assets/coaching.jpg" alt="Coaching">
-      <h3>Personal Coaching</h3>
-    </div>
-    <div class="card tilt">
-      <img src="assets/conditioning.jpg" alt="Conditioning">
-      <h3>Conditioning</h3>
-    </div>
+    <div class="card tilt">Strength</div>
+    <div class="card tilt">Fat Loss</div>
+    <div class="card tilt">Coaching</div>
+    <div class="card tilt">Conditioning</div>
   </div>
 </section>
 
-<!-- Stats -->
-<section class="section reveal stats-section">
+<section class="section reveal scene" id="world">
+  <h2>The World</h2>
+  <p>Scroll moves the camera. Cursor bends the universe.</p>
   <div class="stats">
-    <div>
-      <div class="stat" data-target="10000">0</div>
-      <div class="stat-label">Clients</div>
-    </div>
-    <div>
-      <div class="stat" data-target="12">0</div>
-      <div class="stat-label">Years</div>
-    </div>
-    <div>
-      <div class="stat" data-target="4">0</div>
-      <div class="stat-label">Branches</div>
-    </div>
-    <div>
-      <div class="stat" data-target="95">0</div>
-      <div class="stat-label">% Success</div>
-    </div>
+    <div><div class="stat" data-target="10000">0</div><div class="stat-label">Clients</div></div>
+    <div><div class="stat" data-target="12">0</div><div class="stat-label">Years</div></div>
+    <div><div class="stat" data-target="4">0</div><div class="stat-label">Branches</div></div>
+    <div><div class="stat" data-target="95">0</div><div class="stat-label">% Success</div></div>
   </div>
 </section>
 
-<!-- Before After -->
-<section class="section reveal" id="results">
-  <h2>Real Transformations</h2>
-
-  <div class="ba-wrap">
-    <img src="assets/before1.jpg" alt="Before">
-    <div class="ba-after">
-      <img src="assets/after1.jpg" alt="After">
-    </div>
-    <div class="ba-slider"></div>
-  </div>
-
-  <div class="ba-wrap">
-    <img src="assets/before2.jpg" alt="Before">
-    <div class="ba-after">
-      <img src="assets/after2.jpg" alt="After">
-    </div>
-    <div class="ba-slider"></div>
-  </div>
-</section>
-
-<!-- Branches -->
-<section class="section reveal" id="branches">
-  <h2>Our Branches</h2>
-  <div class="branch-grid">
-    <div class="branch-card">
-      <h3>Mahim</h3>
-      <iframe src="https://www.google.com/maps?q=Mahim,Mumbai&output=embed"></iframe>
-    </div>
-    <div class="branch-card">
-      <h3>Dadar</h3>
-      <iframe src="https://www.google.com/maps?q=Dadar,Mumbai&output=embed"></iframe>
-    </div>
-    <div class="branch-card">
-      <h3>Ghatkopar</h3>
-      <iframe src="https://www.google.com/maps?q=Ghatkopar,Mumbai&output=embed"></iframe>
-    </div>
-    <div class="branch-card">
-      <h3>Vashi</h3>
-      <iframe src="https://www.google.com/maps?q=Vashi,Navi%20Mumbai&output=embed"></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta reveal" id="join">
-  <h2>Start Your Journey</h2>
-  <p>Message us on WhatsApp and book your first session.</p>
+<section class="cta reveal scene" id="join">
+  <h2>Join the Next Level</h2>
+  <p>Message us on WhatsApp and step into the experience.</p>
   <a class="btn primary big" href="https://wa.me/919999999999" target="_blank">Book on WhatsApp</a>
 </section>
 
 <footer>
   <p>© 2026 True Fitness. All rights reserved.</p>
-  <div class="socials">
-    <a href="#">Instagram</a>
-    <a href="#">YouTube</a>
-    <a href="#">Facebook</a>
-  </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
