@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>True Fitness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div id="loader"><div class="loader-text">TRUE FITNESS</div></div>
-<div id="cursor"></div>
+<!-- LOADER -->
+<div id="loader">
+  <h1>TRUE FITNESS</h1>
+  <p>Transform Your Limits</p>
+</div>
 
+<!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">TRUE FITNESS</div>
   <nav>
@@ -20,121 +26,142 @@
     <a href="#transform">Transform</a>
     <a href="#bmi">BMI</a>
     <a href="#branches">Branches</a>
-    <a href="#contact" class="join">Join</a>
+    <a href="#contact" class="btn">Join</a>
   </nav>
 </header>
 
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-foreground">
-    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1200" alt="Athlete">
-  </div>
-  <div class="hero-content">
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-left">
     <h1>ELITE PERFORMANCE.<br><span>SERIOUS RESULTS.</span></h1>
     <p>Not a gym. A transformation lab.</p>
     <div class="hero-buttons">
-      <a href="#programs" class="btn primary sound">View Programs</a>
-      <a href="#contact" class="btn outline sound">Start Now</a>
+      <a href="#programs" class="btn">View Programs</a>
+      <a href="#contact" class="btn-outline">Start Now</a>
     </div>
+  </div>
+  <div class="hero-right">
+    <!-- Replace with your cinematic image/video -->
+    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200" alt="Workout">
   </div>
 </section>
 
-<section class="stats">
-  <div><h3 class="count" data-target="5000">0</h3><p>Happy Members</p></div>
-  <div><h3 class="count" data-target="10">0</h3><p>Years Experience</p></div>
-  <div><h3 class="count" data-target="4">0</h3><p>Branches</p></div>
-  <div><h3 class="count" data-target="98">0</h3><p>% Satisfaction</p></div>
-</section>
-
-<section class="programs" id="programs">
+<!-- PROGRAMS -->
+<section id="programs" class="section">
   <h2>Programs</h2>
   <div class="cards">
-    <div class="card"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800"><h3>Strength</h3></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=800"><h3>Fat Loss</h3></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800"><h3>Personal Coach</h3></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?q=80&w=800"><h3>Conditioning</h3></div>
-  </div>
-</section>
-
-<section class="gallery" id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery-slider">
-    <div class="slides">
-      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200">
-      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=1200">
-      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200">
-      <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?q=80&w=1200">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517964603305-7219b2f3c5aa?q=80&w=800">
+      <h3>Strength Training</h3>
+      <p>Build muscle, increase power, and improve performance with structured strength programs.</p>
     </div>
-    <button class="g-prev">‹</button>
-    <button class="g-next">›</button>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=800">
+      <h3>Fat Loss</h3>
+      <p>Scientifically designed fat-loss routines with cardio and HIIT combinations.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=800">
+      <h3>Personal Coaching</h3>
+      <p>One-on-one coaching for faster and safer transformations.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800">
+      <h3>Conditioning</h3>
+      <p>Improve stamina, agility, and endurance with advanced conditioning plans.</p>
+    </div>
   </div>
 </section>
 
-<section class="transform" id="transform">
+<!-- GALLERY SLIDER -->
+<section id="gallery" class="section dark">
+  <h2>Gallery</h2>
+  <div class="slider">
+    <img id="slide" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200">
+    <button onclick="prevSlide()">❮</button>
+    <button onclick="nextSlide()">❯</button>
+  </div>
+</section>
+
+<!-- TRANSFORMATIONS -->
+<section id="transform" class="section">
   <h2>Real Transformations</h2>
-  <div class="slider-container">
-    <div class="before"><img src="https://images.unsplash.com/photo-1594737625785-cf9c49d1b21f?q=80&w=800"></div>
-    <div class="after"><img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=800"></div>
-    <input type="range" min="0" max="100" value="50" id="baSlider">
+  <div class="transform-grid">
+    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=600">
+    <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=600">
+    <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?q=80&w=600">
+    <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?q=80&w=600">
   </div>
 </section>
 
-<section class="bmi" id="bmi">
+<!-- TESTIMONIALS -->
+<section class="section dark">
+  <h2>Testimonials</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg">
+      <h3>Rahul</h3>
+      <p>Lost 10kg in 3 months. Best decision of my life. Trainers are extremely supportive.</p>
+    </div>
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg">
+      <h3>Neha</h3>
+      <p>Best gym experience ever. Clean, professional and motivating environment.</p>
+    </div>
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/men/45.jpg">
+      <h3>Amit</h3>
+      <p>Real results, real guidance. I feel stronger and healthier than ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BMI -->
+<section id="bmi" class="section">
   <h2>BMI Calculator</h2>
   <div class="bmi-box">
-    <input type="number" id="bmiHeight" placeholder="Height (cm)">
-    <input type="number" id="bmiWeight" placeholder="Weight (kg)">
-    <button class="btn primary" onclick="calculateBMI()">Calculate</button>
+    <input type="number" id="height" placeholder="Height (cm)">
+    <input type="number" id="weight" placeholder="Weight (kg)">
+    <button onclick="calculateBMI()">Calculate</button>
     <p id="bmiResult"></p>
   </div>
 </section>
 
-<section class="testimonials">
-  <h2>Testimonials</h2>
-  <div class="test-grid">
-    <div class="test-card"><img src="https://randomuser.me/api/portraits/men/32.jpg"><p>Lost 10kg in 3 months!</p><h4>Rahul</h4></div>
-    <div class="test-card"><img src="https://randomuser.me/api/portraits/women/44.jpg"><p>Best gym ever.</p><h4>Neha</h4></div>
-    <div class="test-card"><img src="https://randomuser.me/api/portraits/men/65.jpg"><p>Real results.</p><h4>Amit</h4></div>
-  </div>
-</section>
-
-<section class="branches" id="branches">
+<!-- BRANCHES -->
+<section id="branches" class="section dark">
   <h2>Our Branches</h2>
-  <div class="maps">
-    <iframe src="https://www.google.com/maps?q=Mahim%20Mumbai&output=embed"></iframe>
-    <iframe src="https://www.google.com/maps?q=Dadar%20Mumbai&output=embed"></iframe>
-    <iframe src="https://www.google.com/maps?q=Ghatkopar%20Mumbai&output=embed"></iframe>
-    <iframe src="https://www.google.com/maps?q=Vashi%20Navi%20Mumbai&output=embed"></iframe>
+  <div class="branches">
+    <div class="branch">
+      <iframe src="https://www.google.com/maps?q=dadar+mumbai&output=embed"></iframe>
+      <p><strong>Dadar:</strong> Near Dadar Station, Mumbai</p>
+    </div>
+    <div class="branch">
+      <iframe src="https://www.google.com/maps?q=ghatkopar+mumbai&output=embed"></iframe>
+      <p><strong>Ghatkopar:</strong> MG Road, Mumbai</p>
+    </div>
+    <div class="branch">
+      <iframe src="https://www.google.com/maps?q=vashi+navi+mumbai&output=embed"></iframe>
+      <p><strong>Vashi:</strong> Sector 17, Navi Mumbai</p>
+    </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<!-- CONTACT -->
+<section id="contact" class="section">
   <h2>Start Your Journey</h2>
   <div class="contact-buttons">
-    <a href="https://wa.me/911234567890?text=Hi%20I%20want%20to%20join%20True%20Fitness" class="btn primary sound" target="_blank">WhatsApp</a>
-    <a href="tel:911234567890" class="btn outline sound">Call</a>
-    <a href="#" class="btn outline">Instagram</a>
-    <a href="#" class="btn outline">YouTube</a>
-    <a href="#" class="btn outline">Facebook</a>
+    <a class="btn" href="https://wa.me/919999999999">WhatsApp</a>
+    <a class="btn-outline" href="tel:9999999999">Call</a>
+    <a class="btn-outline" href="#">Instagram</a>
+    <a class="btn-outline" href="#">YouTube</a>
+    <a class="btn-outline" href="#">Facebook</a>
   </div>
 </section>
 
-<button class="book-btn">Book Free Trial</button>
+<footer>
+  <p>© 2026 True Fitness. All rights reserved.</p>
+</footer>
 
-<div class="popup" id="bookingPopup">
-  <div class="popup-content">
-    <span class="close-popup">×</span>
-    <h2>Book Free Trial</h2>
-    <input type="text" placeholder="Your Name">
-    <input type="tel" placeholder="Phone Number">
-    <input type="email" placeholder="Email">
-    <button class="btn primary">Submit</button>
-  </div>
-</div>
-
-<footer>© 2026 True Fitness. All rights reserved.</footer>
-
-<audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-click-melodic-tone-1129.mp3"></audio>
 <script src="script.js"></script>
 </body>
 </html>
