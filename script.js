@@ -11,7 +11,7 @@ document.addEventListener("mousemove", e => {
   cursor.style.top = e.clientY + "px";
 });
 
-// Gallery slider
+// Gallery
 let currentSlide = 0;
 const slides = document.querySelector(".gallery-slider .slides");
 const totalSlides = slides.children.length;
@@ -24,7 +24,7 @@ document.querySelector(".g-prev").onclick = () => {
   slides.style.transform = `translateX(-${currentSlide * 100}%)`;
 };
 
-// Before After slider
+// Before After
 const baSlider = document.getElementById("baSlider");
 const afterImg = document.querySelector(".after");
 baSlider.addEventListener("input", () => {
@@ -45,4 +45,20 @@ document.querySelectorAll(".sound").forEach(btn => {
     sound.currentTime = 0;
     sound.play();
   });
+});
+
+// Stats counter
+document.querySelectorAll(".count").forEach(counter => {
+  const update = () => {
+    const target = +counter.dataset.target;
+    const current = +counter.innerText;
+    const inc = target / 100;
+    if (current < target) {
+      counter.innerText = Math.ceil(current + inc);
+      setTimeout(update, 30);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  update();
 });
