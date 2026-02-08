@@ -1,34 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>True Fitness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- Loader -->
-<div id="page-loader">
-  <div class="loader-content">
-    <h1 class="loader-title">TRUE FITNESS</h1>
-    <div class="loader-bar"><span></span></div>
-    <p class="loader-text">Loading experience...</p>
-  </div>
+<div id="loader">
+  <h1>TRUE FITNESS</h1>
+  <span>Loading...</span>
 </div>
 
-<div id="progress"></div>
+<!-- Scroll Progress -->
+<div id="progressBar"></div>
+
+<!-- Custom Cursor -->
 <div class="cursor"></div>
 
-<header class="navbar glass">
+<!-- Navbar -->
+<nav id="navbar">
   <div class="logo">TRUE FITNESS</div>
-  <nav>
-    <a href="#programs">Programs</a>
-    <a href="#facilities">Facilities</a>
-    <a href="#branches">Branches</a>
-    <a href="#testimonials">Reviews</a>
-    <a href="#join">Join</a>
-  </nav>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#branches">Branches</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#join" class="btn">Join</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section id="hero" class="parallax">
+  <div class="hero-content glass">
+    <h1>ELITE PERFORMANCE.<br><span>SERIOUS RESULTS.</span></h1>
+    <p>Not a gym. A transformation lab.</p>
+    <div class="hero-buttons">
+      <a href="#programs" class="btn primary">View Programs</a>
+      <a href="#join" class="btn outline">Start Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Programs -->
+<section id="programs">
+  <h2>Programs</h2>
+  <div class="card-grid">
+    <div class="card tilt">Strength Training</div>
+    <div class="card tilt">Fat Loss</div>
+    <div class="card tilt">Personal Coaching</div>
+    <div class="card tilt">Conditioning</div>
+  </div>
+</section>
+
+<!-- Facilities -->
+<section id="facilities">
+  <h2>Facilities</h2>
+  <div class="glass box">
+    <ul>
+      <li>World-class Equipment</li>
+      <li>Certified Trainers</li>
+      <li>Body Composition Analysis</li>
+      <li>Nutrition Guidance</li>
+      <li>Steam & Lockers</li>
+      <li>AC Workout Zone</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Before After -->
+<section id="transform">
+  <h2>Real Transformations</h2>
+  <div class="ba-container">
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07f" alt="">
+    <div class="resize">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="">
+    </div>
+    <span class="handle"></span>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews">
+  <h2>What Our Members Say</h2>
+  <div class="card-grid">
+    <div class="card tilt">“Lost 12kg in 4 months. Amazing trainers!”</div>
+    <div class="card tilt">“Best gym environment in the city.”</div>
+    <div class="card tilt">“Premium training & real results.”</div>
+  </div>
+</section>
+
+<!-- Branches -->
+<section id="branches">
+  <h2>Our Branches</h2>
+  <div class="branches-grid">
+    <iframe src="https://www.google.com/maps?q=Mahim%20Mumbai&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Dadar%20Mumbai&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Ghatkopar%20Mumbai&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Vashi%20Mumbai&output=embed"></iframe>
+  </div>
+  <div class="glass box">
+    <p>Mahim – Near XYZ Road</p>
+    <p>Dadar – Near ABC Circle</p>
+    <p>Ghatkopar – Near Metro Station</p>
+    <p>Vashi – Sector 17</p>
+  </div>
+</section>
+
+<!-- Join -->
+<section id="join">
+  <div class="glass box center">
+    <h2>Start Your Journey</h2>
+    <p>Message us on WhatsApp or call now to book your first session.</p>
+    <a class="btn primary" href="#">WhatsApp</a>
+    <a class="btn outline" href="#">Call Now</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 True Fitness. All rights reserved.</p>
   <div class="socials">
     <a href="#">WhatsApp</a>
     <a href="#">Call</a>
@@ -37,94 +131,6 @@
     <a href="#">Facebook</a>
     <a href="#">App</a>
   </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-
-  <div class="hero-3d">
-    <img src="assets/hero-man.png" class="hero-man" alt="Athlete">
-    <img src="assets/hero-dumbbell.png" class="hero-dumbbell" alt="Dumbbell">
-  </div>
-
-  <div class="hero-content glass reveal">
-    <h1>ELITE PERFORMANCE<br><span>SERIOUS RESULTS</span></h1>
-    <p>Not a gym. A transformation lab.</p>
-    <div class="hero-buttons">
-      <a class="btn" href="#programs">View Programs</a>
-      <a class="btn outline" href="#join">Start Now</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAMS -->
-<section id="programs" class="section reveal">
-  <h2>Programs</h2>
-  <div class="cards">
-    <div class="card glass tilt"><img src="assets/program1.jpg"><h3>Strength Training</h3></div>
-    <div class="card glass tilt"><img src="assets/program2.jpg"><h3>Fat Loss</h3></div>
-    <div class="card glass tilt"><img src="assets/program3.jpg"><h3>Personal Coaching</h3></div>
-    <div class="card glass tilt"><img src="assets/program4.jpg"><h3>Conditioning</h3></div>
-  </div>
-</section>
-
-<!-- FACILITIES -->
-<section id="facilities" class="section dark reveal">
-  <h2>Facilities</h2>
-  <ul class="facilities glass">
-    <li>🏋️ World-class Equipment</li>
-    <li>🧑‍🏫 Certified Trainers</li>
-    <li>📊 Body Composition Analysis</li>
-    <li>🥗 Nutrition Guidance</li>
-    <li>🚿 Clean Showers & Lockers</li>
-    <li>❄️ AC Workout Zones</li>
-  </ul>
-</section>
-
-<!-- BRANCHES -->
-<section id="branches" class="section reveal">
-  <h2>Our Branches</h2>
-
-  <div class="branch-list glass">
-    <div>Mahim, Mumbai – Near XYZ Road</div>
-    <div>Dadar, Mumbai – Near ABC Circle</div>
-    <div>Ghatkopar, Mumbai – Near Metro Station</div>
-    <div>Vashi, Navi Mumbai – Sector 17</div>
-  </div>
-
-  <div class="maps">
-    <iframe src="https://www.google.com/maps?q=Mahim,Mumbai&output=embed"></iframe>
-    <iframe src="https://www.google.com/maps?q=Dadar,Mumbai&output=embed"></iframe>
-    <iframe src="https://www.google.com/maps?q=Ghatkopar,Mumbai&output=embed"></iframe>
-    <iframe src="https://www.google.com/maps?q=Vashi,Navi%20Mumbai&output=embed"></iframe>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="section dark reveal">
-  <h2>What Our Members Say</h2>
-  <div class="cards">
-    <div class="card glass"><img src="assets/t1.jpg"><p>“Lost 12kg in 4 months. Amazing trainers!”</p></div>
-    <div class="card glass"><img src="assets/t2.jpg"><p>“Best gym experience in Mumbai.”</p></div>
-    <div class="card glass"><img src="assets/t3.jpg"><p>“Real transformations. Real results.”</p></div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="join" class="section cta reveal">
-  <div class="glass">
-    <h2>Start Your Journey</h2>
-    <p>Message us on WhatsApp or call now to book your first session.</p>
-    <div class="hero-buttons">
-      <a class="btn" href="#">WhatsApp</a>
-      <a class="btn outline" href="#">Call Now</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 True Fitness. All rights reserved.</p>
 </footer>
 
 <script src="script.js"></script>
