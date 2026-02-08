@@ -62,3 +62,34 @@ document.querySelectorAll(".count").forEach(counter => {
   };
   update();
 });
+
+// Scroll reveal
+const sections = document.querySelectorAll("section");
+const reveal = () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.style.opacity = 1;
+      sec.style.transform = "translateY(0)";
+    }
+  });
+};
+sections.forEach(sec => {
+  sec.style.opacity = 0;
+  sec.style.transform = "translateY(60px)";
+  sec.style.transition = "1s ease";
+});
+window.addEventListener("scroll", reveal);
+reveal();
+
+// BMI
+function calculateBMI() {
+  const h = document.getElementById("bmiHeight").value / 100;
+  const w = document.getElementById("bmiWeight").value;
+  if (!h || !w) return;
+  const bmi = (w / (h * h)).toFixed(1);
+  let status = "Normal";
+  if (bmi < 18.5) status = "Underweight";
+  else if (bmi > 25) status = "Overweight";
+  document.getElementById("bmiResult").innerText = `Your BMI: ${bmi} (${status})`;
+}
