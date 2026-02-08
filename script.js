@@ -1,43 +1,42 @@
 // Loader
 window.addEventListener("load", () => {
-  document.getElementById("loader").style.display = "none";
+  const loader = document.getElementById("page-loader");
+  setTimeout(() => loader.classList.add("hide"), 800);
 });
 
-// Scroll Progress
+// Scroll progress
 window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const progress = (scrollTop / height) * 100;
-  document.getElementById("progress").style.width = progress + "%";
+  const h = document.documentElement;
+  const sc = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById("progress").style.width = sc + "%";
 });
 
-// Custom Cursor
+// Custom cursor
 const cursor = document.querySelector(".cursor");
 document.addEventListener("mousemove", e => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
 });
 
-// Before After Slider
-const slider = document.getElementById("slider");
-const afterImg = document.getElementById("afterImg");
+// 3D parallax hero
+const heroMan = document.querySelector(".hero-man");
+const heroDumbbell = document.querySelector(".hero-dumbbell");
 
-if (slider) {
-  slider.addEventListener("input", () => {
-    afterImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
-  });
-}
+document.addEventListener("mousemove", e => {
+  const x = (window.innerWidth / 2 - e.clientX) / 25;
+  const y = (window.innerHeight / 2 - e.clientY) / 25;
+  if(heroMan) heroMan.style.transform = `translate(${x}px, ${y}px)`;
+  if(heroDumbbell) heroDumbbell.style.transform = `translate(${x*1.5}px, ${y*1.5}px)`;
+});
 
-// 3D Tilt Cards
+// 3D tilt cards
 document.querySelectorAll(".tilt").forEach(card => {
   card.addEventListener("mousemove", e => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-    const dx = (x - cx) / 20;
-    const dy = (y - cy) / 20;
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const dx = (x - r.width/2) / 20;
+    const dy = (y - r.height/2) / 20;
     card.style.transform = `rotateY(${dx}deg) rotateX(${-dy}deg) scale(1.05)`;
   });
   card.addEventListener("mouseleave", () => {
@@ -45,17 +44,9 @@ document.querySelectorAll(".tilt").forEach(card => {
   });
 });
 
-// Sounds
-const hoverSound = document.getElementById("hoverSound");
-const clickSound = document.getElementById("clickSound");
-
-document.querySelectorAll(".sound").forEach(btn => {
-  btn.addEventListener("mouseenter", () => {
-    hoverSound.currentTime = 0;
-    hoverSound.play();
-  });
-  btn.addEventListener("click", () => {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  });
-});
+// Scroll reveal
+const reveals = document.querySelectorAll(".reveal");
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+}, { threshold: 0.15 });
+reveals.forEach(r => obs.observe(r));
