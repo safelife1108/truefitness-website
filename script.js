@@ -1,3 +1,16 @@
+// Loader
+window.addEventListener("load", () => {
+  document.getElementById("loader").style.display = "none";
+});
+
+// Scroll Progress
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / height) * 100;
+  document.getElementById("progress").style.width = progress + "%";
+});
+
 // Custom Cursor
 const cursor = document.querySelector(".cursor");
 document.addEventListener("mousemove", e => {
@@ -9,28 +22,40 @@ document.addEventListener("mousemove", e => {
 const slider = document.getElementById("slider");
 const afterImg = document.getElementById("afterImg");
 
-if(slider){
+if (slider) {
   slider.addEventListener("input", () => {
     afterImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
   });
 }
 
-// Animated Stats
-const counters = document.querySelectorAll(".stat span");
-const speed = 100;
+// 3D Tilt Cards
+document.querySelectorAll(".tilt").forEach(card => {
+  card.addEventListener("mousemove", e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const dx = (x - cx) / 20;
+    const dy = (y - cy) / 20;
+    card.style.transform = `rotateY(${dx}deg) rotateX(${-dy}deg) scale(1.05)`;
+  });
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateY(0) rotateX(0) scale(1)";
+  });
+});
 
-counters.forEach(counter => {
-  const update = () => {
-    const target = +counter.getAttribute("data-count");
-    const count = +counter.innerText;
-    const inc = Math.ceil(target / speed);
+// Sounds
+const hoverSound = document.getElementById("hoverSound");
+const clickSound = document.getElementById("clickSound");
 
-    if(count < target){
-      counter.innerText = count + inc;
-      setTimeout(update, 30);
-    } else {
-      counter.innerText = target;
-    }
-  };
-  update();
+document.querySelectorAll(".sound").forEach(btn => {
+  btn.addEventListener("mouseenter", () => {
+    hoverSound.currentTime = 0;
+    hoverSound.play();
+  });
+  btn.addEventListener("click", () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+  });
 });
