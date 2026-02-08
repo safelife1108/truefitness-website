@@ -6,8 +6,10 @@ window.addEventListener("load", () => {
     loader.style.display = "none";
   }, 500);
 });
+
 // Simple scroll reveal
 const sections = document.querySelectorAll(".section");
+
 window.addEventListener("scroll", () => {
   const trigger = window.innerHeight * 0.85;
   sections.forEach(sec => {
@@ -18,6 +20,7 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
 // Init styles for animation
 sections.forEach(sec => {
   sec.style.opacity = 0;
