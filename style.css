@@ -1,49 +1,61 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Montserrat}
 body{background:#0b0b0b;color:#fff;overflow-x:hidden}
 
+/* LOADER */
 #loader{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999}
-#loader h1{color:red;font-size:4rem;letter-spacing:5px;text-shadow:0 0 20px red}
+#loader h1{color:red;font-size:4rem;letter-spacing:5px;text-shadow:0 0 30px red}
 
-.cursor{width:20px;height:20px;border:2px solid red;border-radius:50%;position:fixed;pointer-events:none;z-index:9999}
+/* CURSOR */
+.cursor{width:20px;height:20px;border:2px solid red;border-radius:50%;position:fixed;pointer-events:none;z-index:99999}
 
+/* NAV */
 nav{display:flex;justify-content:space-between;align-items:center;padding:20px;position:fixed;width:100%;background:#000a;z-index:100}
 nav ul{display:flex;gap:20px;list-style:none}
 nav a{color:#fff;text-decoration:none}
 .join{background:red;border:none;padding:10px 20px;color:#fff;border-radius:20px}
 
-#hero{height:100vh;position:relative;overflow:hidden}
-.hero-parallax{width:100%;height:100%;position:absolute;overflow:hidden}
-.layer{position:absolute;width:100%;height:100%;object-fit:cover}
-.back{filter:brightness(0.5)}
-.front{mix-blend-mode:screen;opacity:0.9}
-
-.hero-content{position:absolute;top:50%;left:10%;transform:translateY(-50%);z-index:2}
+/* HERO */
+.hero-fake3d{position:relative;height:100vh;overflow:visible;perspective:1200px}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(circle at right,#111,#000)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.9),rgba(0,0,0,.3))}
+.hero-content{position:absolute;top:50%;left:8%;transform:translateY(-50%) translateZ(40px);z-index:3}
 .hero-content h1{font-size:4rem}
 .hero-content span{color:red}
 
-section{padding:100px 10%}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{background:#111;padding:20px;border-radius:15px;transition:.3s}
-.card img{width:100%;border-radius:10px}
+/* FAKE ARM */
+.fake-arm{position:absolute;right:-120px;bottom:-80px;width:520px;height:520px;transform-style:preserve-3d;transform:translateZ(120px);z-index:5}
+.arm-shape{position:absolute;width:320px;height:140px;background:linear-gradient(135deg,#3a3a3a,#0f0f0f);border-radius:80px;bottom:120px;right:60px;transform:rotate(-20deg);box-shadow:0 30px 80px rgba(0,0,0,.8)}
+.dumbbell{position:absolute;bottom:60px;right:0;display:flex;align-items:center;transform:rotate(-20deg)}
+.handle{width:180px;height:16px;background:linear-gradient(to bottom,#666,#222);border-radius:10px}
+.plate{width:70px;height:70px;background:radial-gradient(circle at top left,#555,#111);border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,.8)}
+.plate.left{margin-right:10px}
+.plate.right{margin-left:10px}
 
+/* SECTIONS */
+section{padding:100px 10%}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#111;padding:30px;border-radius:15px;transition:.3s}
 .tilt:hover{transform:rotateY(10deg) rotateX(10deg)}
 
-.compare-container{position:relative;max-width:600px;margin:auto}
-.compare-container img{width:100%;display:block}
-.compare-resize{position:absolute;top:0;left:0;width:50%;overflow:hidden}
+/* TRANSFORM SLIDER */
+.compare-container{position:relative;height:300px;background:#222;border-radius:12px;overflow:hidden}
+.compare-base,.compare-resize{position:absolute;inset:0}
+.compare-base{background:linear-gradient(135deg,#333,#111)}
+.compare-resize{width:50%;background:linear-gradient(135deg,#ff3333,#550000)}
 .compare-handle{position:absolute;left:50%;top:0;width:5px;height:100%;background:red;cursor:ew-resize}
 
+/* BMI */
 .bmi-box{display:flex;gap:40px;flex-wrap:wrap}
-.bmi-calc input, .bmi-calc button{padding:10px;margin:10px 0;width:100%}
+.bmi-calc input,.bmi-calc button{padding:10px;margin:10px 0;width:100%}
 
-.insta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.insta-grid img{width:100%;border-radius:10px}
+/* INSTAGRAM */
+.insta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.insta-grid div{height:120px;background:#222;border-radius:10px}
 
+/* MAPS */
 .maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 .maps iframe{width:100%;height:200px;border:0}
 
+footer{text-align:center;padding:40px}
 .modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:9999}
 .modal-content{background:#111;padding:30px;border-radius:15px;min-width:300px}
-.modal-content input{width:100%;padding:10px;margin:10px 0}
-
-footer{text-align:center;padding:50px}
