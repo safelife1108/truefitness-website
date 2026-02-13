@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <title>True Fitness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -13,37 +16,120 @@
   <h1>TRUE FITNESS</h1>
 </div>
 
-<!-- CUSTOM CURSOR -->
+<!-- CURSOR -->
 <div class="cursor"></div>
 
-<!-- HERO -->
-<section class="hero-3d" id="home">
+<!-- AUDIO -->
+<audio id="hoverSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+<audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-click-1126.mp3"></audio>
 
-  <!-- Background video -->
-  <video autoplay muted loop playsinline class="hero-bg">
-    <source src="https://cdn.coverr.co/videos/coverr-man-training-with-barbell-5475/1080p.mp4" type="video/mp4">
-  </video>
+<!-- BOOKING POPUP -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal">&times;</span>
+    <h2>Book Free Trial</h2>
+    <input placeholder="Your Name">
+    <input placeholder="Phone">
+    <input placeholder="Email">
+    <button>Submit</button>
+  </div>
+</div>
 
-  <!-- Overlay -->
-  <div class="hero-overlay"></div>
+<!-- NAV -->
+<nav>
+  <div class="logo">TRUE FITNESS</div>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#transform">Transform</a></li>
+    <li><a href="#bmi">BMI</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+    <li><a href="#branches">Branches</a></li>
+  </ul>
+  <button class="join" id="openBooking">Book Free Trial</button>
+</nav>
 
-  <!-- Text layer -->
-  <div class="hero-layer hero-text">
+<!-- HERO (3D PARALLAX VIDEO + IMAGE) -->
+<section id="hero">
+  <div class="hero-parallax">
+    <video autoplay muted loop playsinline class="layer back">
+      <source src="https://cdn.coverr.co/videos/coverr-man-lifting-weights-1866/1080p.mp4" type="video/mp4">
+    </video>
+    <img class="layer front" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" alt="arm">
+  </div>
+  <div class="hero-content">
     <h1>ELITE PERFORMANCE.<br><span>SERIOUS RESULTS.</span></h1>
     <p>Not a gym. A transformation lab.</p>
-    <div class="hero-buttons">
-      <a href="#" class="btn">View Programs</a>
-      <a href="#" class="btn-outline">Start Now</a>
+    <div class="buttons">
+      <button class="primary">View Programs</button>
+      <button class="secondary">Start Now</button>
     </div>
   </div>
-
-  <!-- Arm foreground layer (OUT OF FRAME) -->
-  <div class="hero-layer hero-arm">
-    <!-- Replace with your own PNG cutout arm + dumbbell -->
-    <img src="https://i.imgur.com/8Q1ZQZp.png" alt="Arm lifting dumbbell">
-  </div>
-
 </section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <h2>Programs</h2>
+  <div class="cards">
+    <div class="card tilt"><img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285"><h3>Strength</h3><p>Build muscle, power and performance.</p></div>
+    <div class="card tilt"><img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1"><h3>Fat Loss</h3><p>Burn fat with science-based programs.</p></div>
+    <div class="card tilt"><img src="https://images.unsplash.com/photo-1571019613914-85f342c55f84"><h3>Coaching</h3><p>Personal 1-on-1 coaching support.</p></div>
+    <div class="card tilt"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e"><h3>Conditioning</h3><p>Boost stamina and endurance.</p></div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION SLIDER -->
+<section id="transform">
+  <h2>Real Transformations</h2>
+  <div class="compare-container">
+    <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658">
+    <div class="compare-resize">
+      <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a11">
+    </div>
+    <span class="compare-handle"></span>
+  </div>
+</section>
+
+<!-- BMI -->
+<section id="bmi">
+  <div class="bmi-box">
+    <div class="bmi-info">
+      <h2>BMI Calculator</h2>
+      <p>Know your body mass index and understand your fitness level.</p>
+    </div>
+    <div class="bmi-calc">
+      <input id="height" placeholder="Height (cm)">
+      <input id="weight" placeholder="Weight (kg)">
+      <button onclick="calculateBMI()">Calculate</button>
+      <p id="bmiResult"></p>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section id="instagram">
+  <h2>Instagram Feed</h2>
+  <div class="insta-grid">
+    <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285">
+    <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1">
+    <img src="https://images.unsplash.com/photo-1571019613914-85f342c55f84">
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
+  </div>
+</section>
+
+<!-- BRANCHES -->
+<section id="branches">
+  <h2>Our Branches</h2>
+  <div class="maps">
+    <div><iframe src="https://www.google.com/maps?q=Mahim%20Mumbai&output=embed"></iframe><p>Mahim, Mumbai</p></div>
+    <div><iframe src="https://www.google.com/maps?q=Dadar%20Mumbai&output=embed"></iframe><p>Dadar, Mumbai</p></div>
+    <div><iframe src="https://www.google.com/maps?q=Ghatkopar%20Mumbai&output=embed"></iframe><p>Ghatkopar, Mumbai</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 True Fitness. All rights reserved.</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
