@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>True Fitness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
 <!-- LOADER -->
-<div id="loader">
-  <h1>TRUE FITNESS</h1>
-</div>
+<div id="loader"><h1>TRUE FITNESS</h1></div>
 
 <!-- CURSOR -->
 <div class="cursor"></div>
@@ -49,14 +47,11 @@
   <button class="join" id="openBooking">Book Free Trial</button>
 </nav>
 
-<!-- HERO (3D PARALLAX VIDEO + IMAGE) -->
-<section id="hero">
-  <div class="hero-parallax">
-    <video autoplay muted loop playsinline class="layer back">
-      <source src="https://cdn.coverr.co/videos/coverr-man-lifting-weights-1866/1080p.mp4" type="video/mp4">
-    </video>
-    <img class="layer front" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" alt="arm">
-  </div>
+<!-- HERO (FAKE 3D ARM) -->
+<section id="hero" class="hero-fake3d">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
   <div class="hero-content">
     <h1>ELITE PERFORMANCE.<br><span>SERIOUS RESULTS.</span></h1>
     <p>Not a gym. A transformation lab.</p>
@@ -65,27 +60,34 @@
       <button class="secondary">Start Now</button>
     </div>
   </div>
+
+  <div class="fake-arm">
+    <div class="dumbbell">
+      <div class="plate left"></div>
+      <div class="handle"></div>
+      <div class="plate right"></div>
+    </div>
+    <div class="arm-shape"></div>
+  </div>
 </section>
 
 <!-- PROGRAMS -->
 <section id="programs">
   <h2>Programs</h2>
   <div class="cards">
-    <div class="card tilt"><img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285"><h3>Strength</h3><p>Build muscle, power and performance.</p></div>
-    <div class="card tilt"><img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1"><h3>Fat Loss</h3><p>Burn fat with science-based programs.</p></div>
-    <div class="card tilt"><img src="https://images.unsplash.com/photo-1571019613914-85f342c55f84"><h3>Coaching</h3><p>Personal 1-on-1 coaching support.</p></div>
-    <div class="card tilt"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e"><h3>Conditioning</h3><p>Boost stamina and endurance.</p></div>
+    <div class="card tilt"><h3>Strength Training</h3><p>Build muscle, power and performance.</p></div>
+    <div class="card tilt"><h3>Fat Loss</h3><p>Burn fat with science-based methods.</p></div>
+    <div class="card tilt"><h3>Personal Coaching</h3><p>1-on-1 expert guidance.</p></div>
+    <div class="card tilt"><h3>Conditioning</h3><p>Boost stamina and endurance.</p></div>
   </div>
 </section>
 
-<!-- TRANSFORMATION SLIDER -->
+<!-- TRANSFORM -->
 <section id="transform">
   <h2>Real Transformations</h2>
   <div class="compare-container">
-    <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658">
-    <div class="compare-resize">
-      <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a11">
-    </div>
+    <div class="compare-base"></div>
+    <div class="compare-resize"></div>
     <span class="compare-handle"></span>
   </div>
 </section>
@@ -95,7 +97,7 @@
   <div class="bmi-box">
     <div class="bmi-info">
       <h2>BMI Calculator</h2>
-      <p>Know your body mass index and understand your fitness level.</p>
+      <p>Check your body mass index and understand your fitness level.</p>
     </div>
     <div class="bmi-calc">
       <input id="height" placeholder="Height (cm)">
@@ -108,12 +110,9 @@
 
 <!-- INSTAGRAM -->
 <section id="instagram">
-  <h2>Instagram Feed</h2>
+  <h2>Instagram</h2>
   <div class="insta-grid">
-    <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285">
-    <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1">
-    <img src="https://images.unsplash.com/photo-1571019613914-85f342c55f84">
-    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
+    <div></div><div></div><div></div><div></div><div></div><div></div>
   </div>
 </section>
 
